@@ -68,34 +68,75 @@
 (function () {
   const nav = document.getElementById("primaryNav");
   if (!nav) return;
+
   const links = Array.from(nav.querySelectorAll("a[href^='#']"));
   const sections = links
     .map((a) => document.querySelector(a.getAttribute("href")))
     .filter(Boolean);
 
-  function setActiveById(id) {
+  function setActiveById(idOrNull) {
     for (const a of links) {
-      const match = a.getAttribute("href") === `#${id}`;
-      a.toggleAttribute("aria-current", match);
-      a.classList.toggle("active", match);
+      const match = idOrNull && a.getAttribute("href") === `#${idOrNull}`;
+      a.toggleAttribute("aria-current", !!match);
+      a.classList.toggle("active", !!match);
     }
   }
 
+  const header = document.querySelector("header");
+  const headerH = () => (header ? header.offsetHeight : 80);
+  const hero = document.querySelector(".hero");
+
   const onScroll = () => {
+    const anchorY = headerH() + 8; // detection line below header
+    // If near the very top (hero in view), clear any active item
+    if (window.scrollY < Math.max(40, (hero?.offsetHeight || 400) * 0.35)) {
+      setActiveById(null);
+      return;
+    }
+
     let current = null;
     for (const sec of sections) {
       const rect = sec.getBoundingClientRect();
-      if (rect.top <= 96 && rect.bottom >= 96) {
-        current = sec.id;
-        break;
-      }
+      const top = rect.top - headerH();
+      const bottom = rect.bottom - headerH();
+      if (top <= 0 && bottom >= 0) { current = sec.id; break; }
     }
-    if (current) setActiveById(current);
+    setActiveById(current);
   };
+
   document.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
   window.addEventListener("hashchange", () => {
     const id = location.hash.replace("#", "");
-    if (id) setActiveById(id);
+    if (!id) setActiveById(null); else setActiveById(id);
   });
+
   onScroll();
+})();
+
+/* ==============================================================
+   Projects hover gating: enable hover only when section is in view
+   ============================================================== */
+(function () {
+  const sec = document.getElementById("projects");
+  if (!sec) return;
+
+  const setEnabled = (inView) => {
+    sec.classList.toggle("hover-enabled", inView);
+  };
+
+  const io = new IntersectionObserver(
+    ([entry]) => setEnabled(entry.isIntersecting && entry.intersectionRatio > 0.3),
+    { threshold: [0, 0.3, 1] }
+  );
+  io.observe(sec);
+
+  // Disable when jumping back to top
+  window.addEventListener("hashchange", () => {
+    if (location.hash === "" || location.hash === "#top") {
+      sec.classList.remove("hover-enabled");
+    }
+  });
+
+  if (window.scrollY < 50) sec.classList.remove("hover-enabled");
 })();
