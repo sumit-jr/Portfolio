@@ -1,238 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sumit Sah</title>
-  <meta name="title" content="Sumit Sah - Portfolio" />
-  <meta name="description" content="Front-end Developer and ML enthusiast with patents and publications" />
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-chrome-192x192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon/android-chrome-512x512.png" />
-  <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
-  <link rel="manifest" href="assets/favicon/site.webmanifest" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"  rel="stylesheet">
-  <script src="https://kit.fontawesome.com/4ea6e3ab0b.js"  crossorigin="anonymous"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sumit Prasad Sah – Portfolio</title>
+  <meta name="description" content="AI & Cybersecurity Researcher | IEEE Author & Patent Holder. Projects in virtual try-on, intrusion detection, IoT health monitoring, and more." />
+  <link rel="canonical" href="https://sumit-jr.github.io/Portfolio/" />
   <link rel="stylesheet" href="css/styles.css" />
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-/>
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sumit Prasad Sah – Portfolio" />
+  <meta property="og:description" content="AI & Cybersecurity Researcher | IEEE Author & Patent Holder." />
+  <meta property="og:url" content="https://sumit-jr.github.io/Portfolio/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@sumitsah_jr" />
+
+  <!-- Schema.org Person -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Sumit Prasad Sah",
+    "jobTitle":"AI & Cybersecurity Researcher",
+    "url":"https://sumit-jr.github.io/Portfolio/",
+    "sameAs":[
+      "https://www.linkedin.com/in/sumit-prasad-sah/",
+      "https://github.com/Sumit-jr",
+      "https://medium.com/@er.sumitsah",
+      "https://twitter.com/sumitsah_jr",
+      "https://orcid.org/0009-0001-8084-7935"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <!-- Navbar -->
-  <header id="hero">
-    <nav class="navbar">
-      <div class="container">
-        <!-- Logo -->
-        <h1 id="logo">
-          <a href="https://github.com/Sumit-jr"> 
-            <img src="assets/logo.png" alt="Sumit Sah" />
-          </a>
-        </h1>
-        <!-- Navbar links -->
-        <ul class="nav-menu">
-          <li><a class="nav-link" href="#projects">PROJECTS</a></li> 
-          <li><a class="nav-link" href="#patents">PATENTS</a></li>
-          <li><a class="nav-link" href="#publications">PUBLICATIONS</a></li>
-          <li><a class="nav-link" href="#blog">BLOG</a></li>
-          <li><a class="nav-link" href="#footer">CONTACT</a></li>
+  <a href="#main" class="sr-only">Skip to content</a>
+
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="assets/logo.png" alt="Sumit Sah Logo" class="logo" />
+        <span class="site-title">Sumit Sah</span>
+      </div>
+
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#patents">Patents</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <!-- Resume (Google Drive) as a highlighted pill -->
           <li>
-            <a class="nav-link btn btn-primary" href="https://drive.google.com/file/d/1PKXmP5zoaHBZysdhuRuYv9c9yLVDsiVt/view?usp=sharing">RESUME <i class="fas fa-arrow-right"></i></a>
+            <a class="resume-link"
+               href="https://drive.google.com/file/d/1PKXmP5zoaHBZysdhuRuYv9c9yLVDsiVt/view?usp=sharing"
+               target="_blank" rel="noopener">
+              Resume
+            </a>
           </li>
         </ul>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
+      </nav>
+
+      <div class="actions">
+        <button id="themeToggle" class="toggle" aria-label="Toggle light/dark theme">🌓</button>
+        <a class="btn ghost" href="#contact">Say Hello 👋</a>
       </div>
-    </nav>
-    <section class="header-container">
-      <img class="profile-image" src="assets/profile-image.png" alt="Sumit Sah" />
-      <h1>Sumit Prasad Sah – Computer Science Engineer & Researcher</h1>
-      <div class="content-text">
-        <p>Passionate about AI, machine learning, and software development, I specialize in building innovative projects like virtual fitting rooms, disease detection models, and scalable web apps. With experience in research, published papers, and patents, I strive to blend cutting-edge technology with real-world impact.</p>
-        <a href="https://www.linkedin.com/in/sumit-prasad-sah/" class="btn btn-secondary">Connect With Me</a>
-      </div>
-    </section>
+    </div>
   </header>
 
-  <!-- Projects -->
-  <section id="projects" class="project-container container">
-    <div class="division"></div>
-    <div class="content-text">
-      <h2>Projects</h2>
-      <p>Check out some of my personal projects</p>
-    </div>
-    <article class="project">
-  <!-- Project 1 -->
-  <div class="card">
-    <div class="project-info">
-      <div class="project-bio">
-        <h3>Virtual Clothes Try-On</h3>
-        <p>Python, OpenCV, Deep Learning</p>
-      </div>
-      <div class="project-link">
-        <a href="https://github.com/sumit-jr/clothes_virtual_try_on"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fas fa-globe"></i></a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Project 2 -->
-  <div class="card">
-    <div class="project-info">
-      <div class="project-bio">
-        <h3>Network Intrusion Detection (XGBoost)</h3>
-        <p>Python, Machine Learning</p>
-      </div>
-      <div class="project-link">
-        <a href="https://github.com/sumit-jr/Optimizing-XGBoost-Hyperparameters-for-Network-Intrusion-Detection"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fas fa-globe"></i></a>
-      </div>
-    </div>
-  </div>
-
-  
-  <!-- Project 3 -->
-  <div class="card">
-    <div class="project-info">
-      <div class="project-bio">
-        <h3>HealthGuard: IoT-Based Health Monitoring</h3>
-        <p>IoT, Arduino, Sensors</p>
-      </div>
-      <div class="project-link">
-        <a href="https://github.com/sumit-jr/HealthGuard-IoT-Based-Health-Monitoring-System"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fas fa-globe"></i></a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Project 4 -->
-  <div class="card">
-    <div class="project-info">
-      <div class="project-bio">
-        <h3>Movie Metadata Organiser</h3>
-        <p>Ruby on Rails</p>
-      </div>
-      <div class="project-link">
-        <a href="https://github.com/sumit-jr/Movie-Metadata-Organiser"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fas fa-globe"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-
-    <a href="https://github.com/Sumit-jr"  class="btn btn-secondary">See More <i class="fas fa-arrow-right"></i></a>
-  </section>
-
-  <!-- Patents -->
-  <section id="patents" class="container">
-    <div class="division"></div>
-    <div class="content-text">
-      <h2>Patents</h2>
-      <p>My intellectual property contributions</p>
-    </div>
-    <div class="patent-card">
-      <h3>HealthGuard: IoT-Based Health Monitoring System</h3>
-      <p><strong>Patent Number:</strong> 40/2024</p>
-      <p><strong>Inventors:</strong> Geetha S K, Biki Kumar Sah, Preety Chaursaiya, D. S. Miruthusel Varaj, Sumit Prasad Sah</p>
-      <p><strong>Filed:</strong> September 18, 2024</p>
-      <p><strong>Granted:</strong> October 4, 2024</p>
-      <a href="https://drive.google.com/file/d/1jUNlnrlmSjgdC0ZOrbZf-U8HTIDOiJw7/view?usp=sharing"  target="_blank" rel="noopener noreferrer">View Patent <i class="fas fa-external-link-alt"></i></a>
-    </div>
-  </section>
-
-  <!-- Publications -->
-  <section id="publications" class="container">
-    <div class="division"></div>
-    <div class="content-text">
-      <h2>Publications</h2>
-      <p>My research contributions in academic conferences</p>
-    </div>
-    <div class="publication-card">
-      <h3>Advancement in Virtual Fitting Rooms: Integrating AI for Enhanced Online Shopping Experiences</h3>
-      <p><strong>Authors:</strong> Sumit Prasad Sah, Roshan Khadka, Soumili Nayak, Subhashree Pati</p>
-      <p><strong>Conference:</strong> 15th ICCCNT (IEEE), November 2024</p>
-      <p><strong>Published In:</strong> IEEE Xplore</p>
-      <a href="https://doi.org/10.1109/ICCCNT61001.2024.10724276"  target="_blank" rel="noopener noreferrer">View Publication <i class="fas fa-external-link-alt"></i></a>
-    </div>
-    <div class="publication-card">
-      <h3>Optimizing XGBoost Hyperparameters for Network Intrusion Detection</h3>
-      <p><strong>Authors:</strong> Sumit Prasad Sah, Bikram Shahi, Soumili Nayak, Ankita Bhardwaj</p>
-      <p><strong>Conference:</strong> ICCCSMD-2024, December 2024</p>
-      <a href="#" target="_blank" rel="noopener noreferrer">View Publication (link pending) <i class="fas fa-external-link-alt"></i></a>
-    </div>
-  </section>
-
-  <!-- Blogs -->
-  <section id="blog" class="blog-container container">
-    <div class="division"></div>
-    <div class="content-text">
-      <h2>Blogs</h2>
-      <p>Check out some of my personal Blogs</p>
-    </div>
-    <article class="blog">
-      <!-- Blog 1 -->
-      <div class="cards">
-        <div class="blog-info">
-          <div class="blog-bio">
-            <h3>Complete YAML</h3>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container two-col">
+        <!-- LEFT: Intro -->
+        <div class="card">
+          <div class="profile">
+            <img src="assets/profile.jpg" alt="Portrait of Sumit Prasad Sah" class="profile-pic" />
+            <h1 class="name">Sumit Sah</h1>
           </div>
-          <div class="blog-link">
-            <a href="https://medium.com/@er.sumitsah/complete-yaml-course-b656361e23c2"><i  class="fab fa-medium"></i></a>
+
+          <p class="kicker">AI • Cybersecurity • Research</p>
+          <p class="tagline">Cybersecurity & Network Security Enthusiast | Research Contributor | Computer Science Graduate</p>
+
+          <p class="subtitle">
+            I build practical AI systems—virtual try-on, intrusion detection, and IoT health monitoring—that are both research-driven
+            and production-ready. IEEE-published author and patent holder, passionate about turning innovation into real-world impact.
+          </p>
+
+          <!-- Skills -->
+          <div class="row">
+            <span class="chip skill">Python</span>
+            <span class="chip skill">XGBoost</span>
+            <span class="chip skill">TensorFlow</span>
+            <span class="chip skill">Linux</span>
+            <span class="chip skill">Wireshark</span>
+            <span class="chip skill">AWS</span>
+            <span class="chip skill">Docker</span>
+          </div>
+        </div>
+
+        <!-- RIGHT: Quick Facts + Socials -->
+        <div class="card quick-facts">
+          <p class="kicker">Quick Facts</p>
+          <div class="row">
+            <span class="badge"><i class="fa-solid fa-file-lines"></i> IEEE Author</span>
+            <span class="badge"><i class="fa-solid fa-shield-halved"></i> Patent Holder</span>
+            <span class="badge"><i class="fa-solid fa-graduation-cap"></i> B.Tech CSE</span>
+          </div>
+          <ul class="meta list">
+            <li>Published at 15th ICCCNT (IEEE)</li>
+            <li>Granted Indian Patent (HealthGuard)</li>
+            <li>Focus: SOC-oriented ML, CV, IoT</li>
+          </ul>
+          <p class="availability" role="note">
+  <span class="dot" aria-hidden="true"></span>
+  Open to research & security roles.
+  <a class="contact-btn" href="mailto:er.sumitsah@gmail.com">Contact →</a>
+</p>
+
+
+
+          <!-- Socials -->
+          <div class="socials" aria-label="Social profiles">
+            <a class="chip social" data-brand="linkedin" href="https://www.linkedin.com/in/sumit-prasad-sah/" target="_blank" rel="noopener">
+              <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+            <a class="chip social" data-brand="github" href="https://github.com/Sumit-jr" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+            <a class="chip social" data-brand="medium" href="https://medium.com/@er.sumitsah" target="_blank" rel="noopener">
+              <i class="fa-brands fa-medium"></i> Medium
+            </a>
+            <a class="chip social" data-brand="twitter" href="https://twitter.com/sumitsah_jr" target="_blank" rel="noopener">
+              <i class="fa-brands fa-x-twitter"></i> Twitter
+            </a>
+            <a class="chip social" data-brand="orcid" href="https://orcid.org/0009-0001-8084-7935" target="_blank" rel="noopener">
+              <i class="fa-brands fa-orcid"></i> ORCID
+            </a>
           </div>
         </div>
       </div>
-      <!-- Blog 2 -->
-      <div class="cards">
-        <div class="blog-info">
-          <div class="blog-bio">
-            <h3>Introduction to Git</h3>
-          </div>
-          <div class="blog-link">
-            <a href="https://medium.com/@er.sumitsah/github-its-basic-commands-7aadd6f9b11b"><i  class="fab fa-medium"></i></a>
-          </div>
-        </div>
-      </div>
-      <!-- Blog 3 -->
-      <div class="cards">
-        <div class="blog-info">
-          <div class="blog-bio">
-            <h3>Docker File & Container</h3>
-          </div>
-          <div class="blog-link">
-            <a href="https://medium.com/@er.sumitsah/how-to-use-docker-images-containers-and-dockerfiles-7cac3ceddf26"><i  class="fab fa-medium"></i></a>
-          </div>
-        </div>
-      </div>
-    </article>
-    <a href="https://medium.com/@er.sumitsah"  class="btn btn-secondary">See More <i class="fas fa-arrow-right"></i></a>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer id="footer">
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Projects</h2>
+        <p class="lead">Impact-driven engineering across AI, cybersecurity, and full-stack dev.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Streaming Platform (Series) — Ruby on Rails</h3>
+            <p class="meta">Rails · Devise · Stripe · Action Cable · Tailwind</p>
+            <p>Built a role-based streaming platform with secure one-time payments, real-time notifications, and responsive UI.</p>
+            <div class="row">
+              <span class="pill">RBAC</span>
+              <span class="pill">Stripe</span>
+              <span class="pill">Realtime</span>
+            </div>
+            <div class="cta-row">
+              <a class="link" href="https://github.com/sumit-jr/Movie-Metadata-Organiser" target="_blank" rel="noopener">Code →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Virtual Clothes Try-On</h3>
+            <p class="meta">Python · OpenCV · DL (OpenPose, U²-Net, ResNet-101)</p>
+            <p>2D image-based VTON: segment person + garment and warp clothing with geometric matching—no 3D meshes required.</p>
+            <div class="row">
+              <span class="pill">Segmentation</span>
+              <span class="pill">Pose Estimation</span>
+              <span class="pill">Warping</span>
+            </div>
+            <div class="cta-row">
+              <a class="link" href="https://github.com/sumit-jr/clothes_virtual_try_on" target="_blank" rel="noopener">Code →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Network Intrusion Detection (XGBoost)</h3>
+            <p class="meta">Python · ML · UNSW-NB15</p>
+            <p>Precision-oriented IDS with tuned XGBoost and threshold calibration to cut false positives while keeping recall.</p>
+            <div class="row">
+              <span class="pill">XGBoost</span>
+              <span class="pill">AUC/PR</span>
+              <span class="pill">Threshold Tuning</span>
+            </div>
+            <div class="cta-row">
+              <a class="link" href="https://github.com/Sumit-jr/Optimizing-XGBoost-Hyperparameters-for-Network-Intrusion-Detection" target="_blank" rel="noopener">Code →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>HealthGuard (IoT Vitals Monitoring)</h3>
+            <p class="meta">IoT · Arduino · Sensors · Cloud</p>
+            <p>Real-time vitals (HR, temp, SpO₂) with secure data path and alerts. Granted under Indian IP.</p>
+            <div class="row">
+              <span class="pill">Edge → Cloud</span>
+              <span class="pill">Privacy</span>
+              <span class="pill">Dashboards</span>
+            </div>
+            <div class="cta-row">
+              <a class="link" href="https://github.com/sumit-jr/HealthGuard-IoT-Based-Health-Monitoring-System" target="_blank" rel="noopener">Code →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Chicken Disease Detection (CNN)</h3>
+            <p class="meta">Python · DL · AWS</p>
+            <p>Coccidiosis detection pipeline with CI/CD and cloud testing for throughput and reliability.</p>
+            <div class="row">
+              <span class="pill">Vision</span>
+              <span class="pill">MLOps</span>
+              <span class="pill">Deployment</span>
+            </div>
+            <div class="cta-row">
+              <a class="link" href="https://github.com/sumit-jr/Chicken-Disease-Classification-Projects" target="_blank" rel="noopener">Code →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PATENTS -->
+    <section id="patents" class="section">
+      <div class="container">
+        <h2>Patents</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>HealthGuard: IoT-Based Health Monitoring System</h3>
+            <p class="meta">Patent Number: 40/2024 • Granted Oct 4, 2024</p>
+            <p>Low-cost IoT vitals monitoring with secure data handling and alerting for clinics and remote care.</p>
+            <div class="cta-row">
+              <a class="link" href="https://search.ipindia.gov.in/IPOJournal/Journal/ViewJournal" target="_blank" rel="noopener">View Patent →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="section">
+      <div class="container">
+        <h2>Publications</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Advancement in Virtual Fitting Rooms</h3>
+            <p class="meta">15th ICCCNT (IEEE), Nov 2024 • IEEE Xplore</p>
+            <p>2D try-on stack with segmentation + pose + geometric warping; ablations on garment texture realism.</p>
+            <div class="cta-row">
+              <a class="link" href="https://ieeexplore.ieee.org/document/10724276" target="_blank" rel="noopener">View Publication →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Optimizing XGBoost Hyperparameters for Network Intrusion Detection</h3>
+            <p class="meta">ICCCSMD-2024, Dec 2024 • Published</p>
+            <p>Feature selection + threshold tuning on UNSW-NB15; precision-oriented setup to reduce alert fatigue.</p>
+            <div class="cta-row">
+              <a class="link doi"
+                 data-doi="10.1109/ICCCSMD63546.2024.11015173"
+                 href="https://ieeexplore.ieee.org/document/11015173"
+                 target="_blank" rel="noopener">View Publication →</a>
+              <span class="meta" id="doiDisplay">(DOI: 10.1109/ICCCSMD63546.2024.11015173)</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog" class="section">
+      <div class="container">
+        <h2>Blog</h2>
+        <p class="lead">Notes on security, ML, and engineering craft.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Your SOC L1 Journey (Series)</h3>
+            <p class="meta">TryHackMe · Playbooks · Tuning</p>
+            <p>Hands-on notes from labs and how I convert lessons into repeatable triage cheatsheets.</p>
+          </article>
+          <article class="card">
+            <h3>Explaining My XGBoost IDS Paper</h3>
+            <p class="meta">UNSW-NB15 · Precision vs Recall</p>
+            <p>A layperson’s guide to feature prep, thresholding, and why calibration matters for analysts.</p>
+          </article>
+          <article class="card">
+            <h3>Dockerfile Essentials (for ML)</h3>
+            <p class="meta">Reproducibility · Small Images</p>
+            <p>Notes on slimming images, caching, and CPU/GPU switches without pain.</p>
+          </article>
+        </div>
+        <div class="cta-row" style="margin-top:10px;">
+          <a class="link" href="https://medium.com/@er.sumitsah" target="_blank" rel="noopener">See More on Medium →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="lead">Want to collaborate or chat about research/engineering? I read every message.</p>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+          <label class="sr-only" for="name">Name</label>
+          <input id="name" name="name" placeholder="Your name" required />
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          <label class="sr-only" for="msg">Message</label>
+          <textarea id="msg" name="message" placeholder="How can I help?" required></textarea>
+          <button class="btn" type="submit">Send Message</button>
+        </form>
+        <p class="meta" style="margin-top:10px;">
+          Or email me directly: <a class="link" href="mailto:er.sumitsah@gmail.com">er.sumitsah@gmail.com</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume" class="section">
+      <div class="container">
+        <h2>Resume</h2>
+        <p class="lead">Prefer a single page? Grab the PDF.</p>
+        <a class="btn" href="assets/Sumit_Sah_Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
     <div class="container">
-      <a href="mailto:er.sumitsah@gmail.com">er.sumitsah@gmail.com</a>
-      <div class="social">
-        <a href="https://twitter.com/SumitSah_Jr"><img  src="https://cdn-icons-png.flaticon.com/512/124/124021.png"  alt="Twitter" /></a>
-        <a href="https://www.linkedin.com/in/sumit-prasad-sah/"><img  src="https://cdn-icons-png.flaticon.com/512/174/174857.png"  alt="Linkedin" /></a>
-        <a href="https://github.com/Sumit-jr" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-  <i class="fab fa-github" style="font-size: 24px; color: white;"></i>
-</a>
-        <a href="https://medium.com/@er.sumitsah"> 
-          <i class="fab fa-medium fa-2x" style="color: white;"></i>
-        </a>
+      <div class="row center">
+        <span>© <span id="year"></span> <strong>Sumit Sah</strong></span>
+        <span class="sep">·</span>
+        <a class="link" href="https://twitter.com/sumitsah_jr" target="_blank" rel="noopener">Twitter</a>
+        <span class="sep">·</span>
+        <a class="link" href="https://www.linkedin.com/in/sumit-prasad-sah/" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="sep">·</span>
+        <a class="link" href="https://github.com/Sumit-jr" target="_blank" rel="noopener">GitHub</a>
       </div>
-      <p>Copyright &copy;Sumit Sah 2025<br>All rights reserved</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
