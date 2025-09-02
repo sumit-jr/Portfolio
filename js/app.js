@@ -1,142 +1,145 @@
-/* ==============================================================
-   Theme toggle + persistence
-   ============================================================== */
-(function () {
-  const root = document.documentElement;
-  const saved = localStorage.getItem("theme");
+/* =====================================================================
+   app.js — Refactored (theme, year, fade-in, DOI, nav active, hover gating)
+   ===================================================================== */
+
+/* ---------- Utilities ---------- */
+const $    = (sel, root = document) => root.querySelector(sel);
+const $$   = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+const on   = (el, ev, fn, opts)     => el && el.addEventListener(ev, fn, opts);
+const prefersReducedMotion = () =>
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- Theme toggle + persistence ---------- */
+(() => {
+  const root   = document.documentElement;
+  const toggle = $("#themeToggle");
+  const saved  = localStorage.getItem("theme");
 
   if (!saved) {
-    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-    if (prefersLight) root.classList.add("light");
+    if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+      root.classList.add("light");
+    }
   } else if (saved === "light") {
     root.classList.add("light");
   }
 
-  const toggle = document.getElementById("themeToggle");
-  toggle?.addEventListener("click", () => {
+  on(toggle, "click", () => {
     const isLight = root.classList.toggle("light");
     localStorage.setItem("theme", isLight ? "light" : "dark");
   });
 })();
 
-/* ==============================================================
-   Footer year
-   ============================================================== */
-(function () {
-  const yearEl = document.getElementById("year");
+/* ---------- Footer year ---------- */
+(() => {
+  const yearEl = $("#year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 })();
 
-/* ==============================================================
-   Fade-in on scroll (respects reduced motion)
-   ============================================================== */
-(function () {
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+/* ---------- Fade-in on scroll (respects reduced motion) ---------- */
+(() => {
+  if (prefersReducedMotion()) return;
 
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      for (const e of entries) {
-        if (!e.isIntersecting) continue;
-        e.target.animate(
-          [{ opacity: 0, transform: "translateY(6px)" }, { opacity: 1, transform: "translateY(0)" }],
-          { duration: 400, easing: "ease-out", fill: "forwards" }
-        );
-        obs.unobserve(e.target);
-      }
-    },
-    { rootMargin: "-50px 0px -20% 0px", threshold: 0.01 }
-  );
+  const targets = $$(".card, .section h2, .lead");
+  if (!targets.length) return;
 
-  document.querySelectorAll(".card, .section h2, .lead").forEach((el) => observer.observe(el));
+  const io = new IntersectionObserver((entries, obs) => {
+    for (const e of entries) {
+      if (!e.isIntersecting) continue;
+      e.target.animate(
+        [
+          { opacity: 0, transform: "translateY(6px)" },
+          { opacity: 1, transform: "translateY(0)" },
+        ],
+        { duration: 400, easing: "ease-out", fill: "forwards" }
+      );
+      obs.unobserve(e.target);
+    }
+  }, { rootMargin: "-50px 0px -20% 0px", threshold: 0.01 });
+
+  targets.forEach(el => io.observe(el));
 })();
 
-/* ==============================================================
-   Publications: show DOI inline if present
-   ============================================================== */
-(function () {
-  const doiLink = document.querySelector(".doi");
-  const doiDisplay = document.getElementById("doiDisplay");
-  if (doiLink && doiDisplay) {
-    const doi = doiLink.getAttribute("data-doi");
-    if (doi && !/xxxx/i.test(doi)) doiDisplay.textContent = `(DOI: ${doi})`;
+/* ---------- Publications: show DOI inline if present ---------- */
+(() => {
+  const doiLink    = $(".doi");
+  const doiDisplay = $("#doiDisplay");
+  if (!doiLink || !doiDisplay) return;
+
+  const doi = doiLink.getAttribute("data-doi");
+  if (doi && !/xxxx/i.test(doi)) {
+    doiDisplay.textContent = `(DOI: ${doi})`;
   }
 })();
 
-/* ==============================================================
-   Nav: set aria-current on active section link
-   ============================================================== */
-(function () {
-  const nav = document.getElementById("primaryNav");
+/* ---------- Nav: set aria-current on active section link ---------- */
+(() => {
+  const nav      = $("#primaryNav");
   if (!nav) return;
 
-  const links = Array.from(nav.querySelectorAll("a[href^='#']"));
+  const header   = $("header");
+  const headerH  = () => (header ? header.offsetHeight : 80);
+  const links    = $$("a[href^='#']", nav);
   const sections = links
-    .map((a) => document.querySelector(a.getAttribute("href")))
+    .map(a => $(a.getAttribute("href")))
     .filter(Boolean);
+  const hero     = $(".hero");
 
-  function setActiveById(idOrNull) {
+  const setActiveById = (idOrNull) => {
     for (const a of links) {
       const match = idOrNull && a.getAttribute("href") === `#${idOrNull}`;
       a.toggleAttribute("aria-current", !!match);
       a.classList.toggle("active", !!match);
     }
-  }
-
-  const header = document.querySelector("header");
-  const headerH = () => (header ? header.offsetHeight : 80);
-  const hero = document.querySelector(".hero");
+  };
 
   const onScroll = () => {
-    const anchorY = headerH() + 8; // detection line below header
-    // If near the very top (hero in view), clear any active item
-    if (window.scrollY < Math.max(40, (hero?.offsetHeight || 400) * 0.35)) {
-      setActiveById(null);
-      return;
-    }
+    const nearTop = window.scrollY < Math.max(40, (hero?.offsetHeight || 400) * 0.35);
+    if (nearTop) return setActiveById(null);
 
     let current = null;
     for (const sec of sections) {
-      const rect = sec.getBoundingClientRect();
-      const top = rect.top - headerH();
+      const rect   = sec.getBoundingClientRect();
+      const top    = rect.top    - headerH();
       const bottom = rect.bottom - headerH();
       if (top <= 0 && bottom >= 0) { current = sec.id; break; }
     }
     setActiveById(current);
   };
 
-  document.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll, { passive: true });
-  window.addEventListener("hashchange", () => {
+  on(document, "scroll", onScroll, { passive: true });
+  on(window, "resize", onScroll,   { passive: true });
+  on(window, "hashchange", () => {
     const id = location.hash.replace("#", "");
-    if (!id) setActiveById(null); else setActiveById(id);
+    id ? setActiveById(id) : setActiveById(null);
   });
 
   onScroll();
 })();
 
-/* ==============================================================
-   Projects hover gating: enable hover only when section is in view
-   ============================================================== */
-(function () {
-  const sec = document.getElementById("projects");
-  if (!sec) return;
+/* ---------- Hover gating: enable hover only when section is visible ---------- */
+/* Applies to any section with class="hover-scope" (e.g., #projects, #works) */
+(() => {
+  const scopes = $$(".hover-scope");
+  if (!scopes.length) return;
 
-  const setEnabled = (inView) => {
-    sec.classList.toggle("hover-enabled", inView);
+  const setEnabled = (el, inView) => {
+    el.classList.toggle("hover-enabled", inView);
   };
 
-  const io = new IntersectionObserver(
-    ([entry]) => setEnabled(entry.isIntersecting && entry.intersectionRatio > 0.3),
-    { threshold: [0, 0.3, 1] }
-  );
-  io.observe(sec);
-
-  // Disable when jumping back to top
-  window.addEventListener("hashchange", () => {
-    if (location.hash === "" || location.hash === "#top") {
-      sec.classList.remove("hover-enabled");
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      setEnabled(e.target, e.isIntersecting && e.intersectionRatio > 0.3);
     }
+  }, { threshold: [0, 0.3, 1] });
+
+  scopes.forEach(sec => {
+    io.observe(sec);
+    if (window.scrollY < 50) sec.classList.remove("hover-enabled");
   });
 
-  if (window.scrollY < 50) sec.classList.remove("hover-enabled");
+  on(window, "hashchange", () => {
+    if (location.hash === "" || location.hash === "#top") {
+      scopes.forEach(sec => sec.classList.remove("hover-enabled"));
+    }
+  });
 })();

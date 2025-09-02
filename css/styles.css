@@ -9,8 +9,8 @@
   --shadow:0 10px 30px rgba(0,0,0,.25);
   --radius:16px;
 
-  --cta2-start:#0aa06f;
-  --cta2-end:#07966a;
+  --cta2-start:#0aa06f; --cta2-end:#07966a;
+  --drive:#0F9D58; /* Google Drive green */
 }
 :root.light{
   --bg:#f7f8fb; --bg-soft:#fff; --surface:#fff;
@@ -19,8 +19,8 @@
   --card:#fff; --ring:rgba(91,77,255,.35);
   --shadow:0 8px 24px rgba(16,24,40,.08);
 
-  --cta2-start:#0aa06f;
-  --cta2-end:#056f52;
+  --cta2-start:#0aa06f; --cta2-end:#056f52;
+  --drive:#138A4C;
 }
 
 /* ==============================================================
@@ -30,7 +30,6 @@
 html:focus-within{ scroll-behavior:smooth; }
 body{
   margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-  background: var(--bg);
   background:
     radial-gradient(1200px 800px at 70% -10%, rgba(124,92,255,.15), transparent 60%),
     radial-gradient(1200px 800px at -10% 20%, rgba(6,214,160,.10), transparent 55%),
@@ -40,7 +39,6 @@ body{
 a{ color:inherit; text-decoration:none; }
 img{ max-width:100%; display:block; height:auto; }
 ::selection{ background: rgba(124,92,255,.35); }
-
 @media (prefers-reduced-motion: reduce){
   *{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition:none !important; }
 }
@@ -49,7 +47,6 @@ img{ max-width:100%; display:block; height:auto; }
    LAYOUT + HEADER
    ============================================================== */
 .container{ width:min(1100px,92%); margin-inline:auto; }
-
 header{
   position:sticky; top:0; z-index:50;
   backdrop-filter:saturate(130%) blur(8px);
@@ -57,7 +54,6 @@ header{
   border-bottom:1px solid color-mix(in oklab, var(--text) 15%, transparent);
 }
 :root.light header{ background: rgba(255,255,255,.9); }
-
 .nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
 .brand{ display:flex; gap:12px; align-items:center; }
 .logo{ height:28px; width:auto; display:block; }
@@ -67,7 +63,6 @@ header{
    NAVIGATION
    ============================================================== */
 nav ul{ display:flex; gap:18px; list-style:none; padding:0; margin:0; }
-
 nav a:not(.resume-link){
   position:relative; padding:8px 12px; border-radius:10px;
   font-weight:600; font-size:14px; color:var(--muted);
@@ -76,11 +71,8 @@ nav a:not(.resume-link){
 @media (hover:hover){
   nav a:not(.resume-link):hover,
   nav a:not(.resume-link):focus-visible{
-    color:#fff;
-    background: linear-gradient(135deg, var(--brand), var(--brand-2));
-    box-shadow: var(--shadow);
-    transform: translateY(-1px);
-    outline: none;
+    color:#fff; background: linear-gradient(135deg, var(--brand), var(--brand-2));
+    box-shadow: var(--shadow); transform: translateY(-1px); outline: none;
   }
 }
 nav a:not(.resume-link):active{ transform:translateY(0); filter:brightness(.95); }
@@ -90,22 +82,13 @@ nav a.resume-link,
 nav a.resume-link:visited,
 nav a.resume-link:active,
 nav a.resume-link:focus{
-  padding:6px 12px; border-radius:999px;
-  font-weight:600; font-size:14px;
+  padding:6px 12px; border-radius:999px; font-weight:600; font-size:14px;
   background: linear-gradient(135deg, var(--brand), var(--brand-2));
   color:#fff !important; box-shadow:var(--shadow);
   transition: transform .2s ease, background .3s ease;
 }
-nav a.resume-link:hover{
-  transform:translateY(-2px);
-  background:linear-gradient(135deg, var(--brand-2), var(--brand));
-}
-
-nav a:focus-visible{
-  outline:2px solid var(--ring);
-  outline-offset:3px;
-  border-radius:10px;
-}
+nav a.resume-link:hover{ transform:translateY(-2px); background:linear-gradient(135deg, var(--brand-2), var(--brand)); }
+nav a:focus-visible{ outline:2px solid var(--ring); outline-offset:3px; border-radius:10px; }
 
 /* Header actions */
 .actions{ display:flex; align-items:center; gap:10px; }
@@ -115,11 +98,6 @@ nav a:focus-visible{
   background: linear-gradient(135deg, var(--brand), var(--brand-2));
   color:#fff; box-shadow:var(--shadow);
 }
-.btn.ghost{
-  background:transparent; color:var(--text);
-  border:1px solid color-mix(in oklab, var(--text) 15%, transparent);
-  box-shadow:none;
-}
 .toggle{
   inline-size:42px; block-size:38px; border-radius:12px; display:grid; place-items:center;
   border:1px solid color-mix(in oklab, var(--text) 15%, transparent);
@@ -128,7 +106,7 @@ nav a:focus-visible{
 }
 
 /* ==============================================================
-   HERO + CARDS
+   HERO + TYPE
    ============================================================== */
 .hero{ padding:56px 0 20px; }
 .hero .card{
@@ -144,10 +122,6 @@ nav a:focus-visible{
   width:128px; height:128px; border-radius:50%; object-fit:cover;
   border:2px solid color-mix(in oklab, var(--text) 20%, transparent);
 }
-
-/* ==============================================================
-   TYPE
-   ============================================================== */
 .name{
   margin:0 0 2px; font-size: clamp(32px, 4.2vw + 8px, 56px);
   line-height:1.1; font-weight:900; letter-spacing:.2px;
@@ -171,10 +145,7 @@ nav a:focus-visible{
   background: color-mix(in oklab, var(--text) 6%, transparent);
   border:1px solid color-mix(in oklab, var(--text) 15%, transparent);
 }
-.chip.skill:hover{
-  transform:translateY(-2px);
-  background-color: color-mix(in oklab, var(--text) 12%, transparent);
-}
+.chip.skill:hover{ transform:translateY(-2px); background-color: color-mix(in oklab, var(--text) 12%, transparent); }
 
 /* Social chips */
 .chip.social{
@@ -183,13 +154,11 @@ nav a:focus-visible{
   color: var(--text);
 }
 .chip.social i{ font-size:14px; }
-
 .chip.social[data-brand="linkedin"] i{ color:#0A66C2; }
 .chip.social[data-brand="github"]   i{ color:#181717; }
 .chip.social[data-brand="medium"]   i{ color:#000000; }
 .chip.social[data-brand="twitter"]  i{ color:#000000; }
 .chip.social[data-brand="orcid"]    i{ color:#A6CE39; }
-
 .chip.social:hover{ transform: translateY(-2px); }
 .chip.social[data-brand="linkedin"]:hover{ background:#0A66C2; border-color:#0A66C2; color:#fff; }
 .chip.social[data-brand="github"]:hover  { background:#181717; border-color:#181717; color:#fff; }
@@ -199,11 +168,7 @@ nav a:focus-visible{
 .chip.social:hover i{ color:inherit; }
 
 /* Extra spacing for badges block */
-.quick-facts .row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px 12px;                /* a bit more air between badges */
-}
+.quick-facts .row{ display:flex; flex-wrap:wrap; gap:10px 12px; }
 .badge{ margin:2px 0; }
 
 /* ==============================================================
@@ -223,12 +188,21 @@ nav a:focus-visible{
 .card:hover{ transform:translateY(-2px); box-shadow:var(--shadow); }
 .card h3{ margin:2px 0 4px; font-size:18px; }
 .meta{ font-size:13px; color: var(--muted); }
+.refs.meta {
+  font-size: 12.5px;
+  color: color-mix(in oklab, var(--muted) 88%, var(--brand));
+  margin-top: -4px;
+}
 
-/* Lists */
+.refs.meta a {
+  text-decoration: underline dotted 1px;
+  text-underline-offset: 3px;
+  color: inherit;
+}
+
+/* Lists & Forms */
 .list{ margin-top:6px; padding-left:18px; }
 .list li{ margin:2px 0; }
-
-/* Forms */
 form{ display:grid; gap:12px; margin-top:10px; }
 input,textarea{
   appearance:none; font:inherit; color:inherit;
@@ -263,24 +237,18 @@ footer{ color:var(--muted); padding:34px 0 48px; text-align:center; }
 }
 .badge i{ font-size:14px; }
 .badge:hover{ transform:translateY(-2px); background:linear-gradient(135deg, var(--brand-2), var(--brand)); }
-
-/* Quick facts sticky */
 @media (min-width:901px){ .quick-facts{ position:sticky; top:88px; align-self:start; } }
 
 /* ==============================================================
-   AVAILABILITY & CONTACT CTA
+   CTA BUTTONS
    ============================================================== */
 .avail-link{
   margin-left:auto; font-weight:700; font-size:14px;
   padding:6px 12px; border-radius:999px;
   background: linear-gradient(135deg, var(--brand), var(--brand-2));
-  color:#fff !important; box-shadow:var(--shadow);
-  white-space:nowrap;
+  color:#fff !important; box-shadow:var(--shadow); white-space:nowrap;
 }
-.avail-link:hover{
-  transform: translateY(-2px);
-  background: linear-gradient(135deg, var(--brand-2), var(--brand));
-}
+.avail-link:hover{ transform: translateY(-2px); background: linear-gradient(135deg, var(--brand-2), var(--brand)); }
 
 .contact-btn{
   display:inline-flex; align-items:center; gap:6px;
@@ -304,130 +272,144 @@ footer{ color:var(--muted); padding:34px 0 48px; text-align:center; }
 }
 
 /* ==============================================================
-   PROJECTS: equal-height cards, compact layout, gated hover
+   PROJECTS: equal-height cards + gated hover
    ============================================================== */
-
-/* Stretch items so all cards align */
 #projects .grid { align-items: stretch; }
 
-/* Card base */
 .project-card {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  padding: 0;
-  height: 100%;
+  display: flex; flex-direction: column; overflow: hidden; padding: 0; height: 100%;
   border: 1px solid color-mix(in oklab, var(--text) 14%, transparent);
-  border-radius: var(--radius);
-  background: var(--card);
+  border-radius: var(--radius); background: var(--card);
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
+.project-card:hover { transform: none; box-shadow: none; border-color: color-mix(in oklab, var(--text) 14%, transparent); }
 
-/* Default hover neutral (gated below) */
-.project-card:hover {
-  transform: none;
-  box-shadow: none;
-  border-color: color-mix(in oklab, var(--text) 14%, transparent);
-}
-
-/* Thumbnails: prioritize top ~70% */
 .project-thumb {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: 50% 15%; /* a bit higher than 30% => more top in view */
-  display: block;
-  border-bottom: 1px solid color-mix(in oklab, var(--text) 12%, transparent);
+  width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 50% 15%;
+  display: block; border-bottom: 1px solid color-mix(in oklab, var(--text) 12%, transparent);
 }
-
-/* Body stack */
-.project-body {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 14px;
-  flex: 1;
-}
-.project-body h3 {
-  margin: 0;
-  font-size: 16px;
-}
-
-/* Meta line (italic) */
+.project-body { display:flex; flex-direction:column; gap:8px; padding:14px; flex:1; }
+.project-body h3 { margin:0; font-size:16px; }
 .project-body .meta {
-  font-size: 12.5px;
-  font-style: italic;
-  color: color-mix(in oklab, var(--muted) 85%, var(--brand));
-  margin-bottom: 2px;
+  font-size: 12.5px; font-style: italic;
+  color: color-mix(in oklab, var(--muted) 85%, var(--brand)); margin-bottom: 2px;
 }
+.project-body .row { display:flex; gap:6px; flex-wrap:wrap; margin-top:2px; margin-bottom:10px; }
+.project-body .cta-row { margin-top:auto; display:flex; gap:8px; }
 
-/* Pills row: compact with spacing before button */
-.project-body .row {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  margin-top: 2px;
-  margin-bottom: 10px; /* space between pills & button */
-}
-
-/* Pills */
-.pill {
-  font-size: 11.5px;
-  padding: 3px 8px;
-  border-radius: 999px;
-  border: 1px solid color-mix(in oklab, var(--text) 15%, transparent);
-  transition: background-color .25s ease, color .25s ease, transform .18s ease, border-color .18s ease;
-}
-
-/* Default pill hover neutral (gated below) */
-.pill:hover {
-  background: none;
-  color: inherit;
-  transform: none;
-}
-
-/* Button row pinned to bottom */
-.project-body .cta-row {
-  margin-top: auto;
-  display: flex;
-  gap: 8px;
-}
-
-/* Green Code button */
-.btn.code-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 800;
+/* Code / Link buttons (green) reused */
+.btn.code-btn,
+.btn.link-btn{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:8px 16px; border-radius:999px; font-size:14px; font-weight:800;
   background: linear-gradient(135deg, var(--cta2-start), var(--cta2-end));
-  color: #fff !important;
-  box-shadow: var(--shadow);
-  border: 1px solid color-mix(in oklab, var(--cta2-end) 28%, transparent);
+  color:#fff !important; box-shadow: var(--shadow);
+  border:1px solid color-mix(in oklab, var(--cta2-end) 28%, transparent);
   transition: transform .2s ease, background .3s ease, box-shadow .3s ease, filter .2s ease;
-  text-decoration: none;
+  text-decoration:none;
 }
-.btn.code-btn:hover {
+.btn.code-btn:hover, .btn.link-btn:hover{
   transform: translateY(-2px);
   background: linear-gradient(135deg, var(--cta2-end), var(--cta2-start));
   box-shadow: 0 6px 20px rgba(0,0,0,.25);
 }
-.btn.code-btn:active {
-  transform: translateY(0);
-  filter: brightness(.96);
-}
+.btn.code-btn:active, .btn.link-btn:active{ transform: translateY(0); filter: brightness(.96); }
 
-/* === GATED HOVER: only when #projects is in view === */
-#projects.hover-enabled .project-card:hover {
+/* ==============================================================
+   ENTRIES (Patents & Publications) — share project system
+   ============================================================== */
+.entry-card { /* shares .project-card styles via grouping */
+  display:flex; flex-direction:column; overflow:hidden; padding:0; height:100%;
+  border:1px solid color-mix(in oklab, var(--text) 14%, transparent);
+  border-radius:var(--radius); background:var(--card);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.entry-thumb { width:100%; aspect-ratio:16/10; object-fit:cover; object-position:50% 15%;
+  display:block; border-bottom:1px solid color-mix(in oklab, var(--text) 12%, transparent); }
+.entry-body { display:flex; flex-direction:column; gap:8px; padding:14px; flex:1; }
+.entry-body h3{ margin:0; font-size:16px; }
+.entry-body .row{ display:flex; gap:6px; flex-wrap:wrap; margin-top:2px; margin-bottom:12px; }
+.entry-body .cta-row{ margin-top:auto; display:flex; gap:10px; flex-wrap:wrap; }
+
+/* Gated hover for cards (both sections) */
+#projects.hover-enabled .project-card:hover,
+.hover-scope.hover-enabled .project-card:hover,
+.hover-scope.hover-enabled .entry-card:hover{
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(0,0,0,.24);
   border-color: color-mix(in oklab, var(--brand) 30%, transparent);
 }
-#projects.hover-enabled .pill:hover {
-  background: var(--brand);
-  color: #fff;
-  border-color: transparent;
-  transform: scale(1.04);
+
+/* ==============================================================
+   PILLS — unified: white → purple on hover (gated)
+   ============================================================== */
+.pill{
+  font-size:11.5px; padding:3px 8px; border-radius:999px;
+  background:#fff; color:var(--text);
+  border:1px solid color-mix(in oklab, var(--text) 15%, transparent);
+  transition:
+    background-color .22s ease, color .22s ease,
+    transform .18s ease, border-color .18s ease, box-shadow .22s ease;
 }
+.pill:focus-visible{ outline:2px solid var(--ring); outline-offset:2px; }
+
+/* Hover turns purple only when the section is in view */
+#projects.hover-enabled .pill:hover,
+.hover-scope.hover-enabled .pill:hover{
+  background:var(--brand); color:#fff; border-color:transparent;
+  transform:scale(1.04); box-shadow:0 6px 16px rgba(124,92,255,.35);
+}
+
+/* Optional “always purple” variant if you use it anywhere */
+.pill-brand{
+  background:var(--brand); color:#fff; border-color:transparent;
+  box-shadow:0 4px 12px rgba(124,92,255,.25);
+}
+#projects.hover-enabled .pill-brand:hover,
+.hover-scope.hover-enabled .pill-brand:hover{
+  transform:scale(1.04); box-shadow:0 6px 18px rgba(124,92,255,.35); filter:brightness(1.05);
+}
+
+/* ==============================================================
+   GHOST + BACKUP (Drive) BUTTONS
+   ============================================================== */
+.btn.ghost{
+  background:transparent; color:var(--text);
+  border:1px solid color-mix(in oklab, var(--text) 15%, transparent);
+  box-shadow:none;
+  padding:8px 16px; border-radius:999px; font-weight:700; font-size:14px;
+  transition: transform .2s ease, background .3s ease, color .3s ease, border-color .3s ease;
+}
+.btn.ghost:hover{
+  transform: translateY(-2px);
+  background: color-mix(in oklab, var(--brand) 12%, transparent);
+  border-color: color-mix(in oklab, var(--brand) 40%, transparent);
+  color: var(--brand);
+}
+
+.btn.ghost.backup{
+  border-color: color-mix(in oklab, var(--drive) 60%, transparent);
+  color: color-mix(in oklab, var(--drive) 85%, var(--text));
+}
+.btn.ghost.backup:hover{
+  transform: translateY(-2px);
+  background: color-mix(in oklab, var(--drive) 22%, transparent);
+  border-color: var(--drive); color:#fff;
+  box-shadow:0 6px 18px rgba(0,0,0,.22);
+}
+.btn.ghost.backup:focus-visible{
+  outline:2px solid color-mix(in oklab, var(--drive) 55%, transparent); outline-offset:3px;
+}
+
+/* ==============================================================
+   SMALL POLISH
+   ============================================================== */
+.sep{ margin:0 8px; color: color-mix(in oklab, var(--text) 35%, transparent); }
+
+.link{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+
+

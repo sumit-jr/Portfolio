@@ -72,9 +72,8 @@
 
       <nav aria-label="Primary">
         <ul id="primaryNav">
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#patents">Patents</a></li>
-          <li><a href="#publications">Publications</a></li>
+          <li><a href="#projects"> Reseach & Projects</a></li>
+          <li><a href="#work">Patents & Publications</a></li>
           <li><a href="#blog">Blog</a></li>
           <li><a href="#contact">Contact</a></li>
           <li>
@@ -166,9 +165,9 @@
     </section>
 
     <!-- PROJECTS -->
-<section id="projects" class="section">
+<section id="projects" class="section hover-scope">
   <div class="container">
-    <h2>Research &  Projects</h2>
+    <h2>Research & Projects</h2>
     <p class="lead">Applied research in cybersecurity, reinforced with AI and full-stack engineering.</p>
 
 
@@ -183,8 +182,8 @@
        width="960" height="540" loading="lazy" decoding="async" />
   <div class="project-body">
     <h3>Virtual Clothes Try-On</h3>
-    <p class="meta">Python · OpenCV · DL (OpenPose, U2-Net, ResNet-101)</p>
-    <p>2D image-based VTON: segment person + garment and warp clothing with geometric matching—no 3D meshes required.</p>
+    <p class="meta">Python · OpenCV · GMM · DL (OpenPose, U2-Net, ResNet-101) · VITON dataset</p>
+    <p>2D image-based VITON: segment person + garment and warp clothing with geometric matching—no 3D meshes required.</p>
     <div class="row">
       <span class="pill">Segmentation</span>
       <span class="pill">Pose Estimation</span>
@@ -205,7 +204,7 @@
        width="960" height="540" loading="lazy" decoding="async" />
   <div class="project-body">
     <h3>Network Intrusion Detection (XGBoost)</h3>
-    <p class="meta">Python · ML · UNSW-NB15</p>
+    <p class="meta">Python · ML · UNSW-NB15 dataset</p>
     <p>Precision-oriented IDS with tuned XGBoost and threshold calibration to cut false positives while keeping recall.</p>
     <div class="row">
       <span class="pill">XGBoost</span>
@@ -290,49 +289,122 @@
   </div>
 </section>
 
+  <!-- PATENTS & PUBLICATIONS (merged) -->
+<section id="works" class="section hover-scope">
+  <div class="container">
+    <h2>Patents & Publications</h2>
+    <div class="grid">
 
-    <!-- PATENTS -->
-    <section id="patents" class="section">
-      <div class="container">
-        <h2>Patents</h2>
-        <div class="grid">
-          <article class="card">
-            <h3>HealthGuard: IoT-Based Health Monitoring System</h3>
-            <p class="meta">Patent Number: 40/2024 • Granted Oct 4, 2024</p>
-            <p>Low-cost IoT vitals monitoring with secure data handling and alerting for clinics and remote care.</p>
-            <div class="cta-row">
-              <a class="link" href="https://search.ipindia.gov.in/IPOJournal/Journal/ViewJournal" target="_blank" rel="noopener noreferrer">View Patent →</a>
-            </div>
-          </article>
+      <!-- Patent -->
+      <article class="card entry-card">
+        <img class="entry-thumb"
+             src="assets/Patents/healthguard-patent.jpg"
+             alt="HealthGuard IoT Patent cover"
+             width="960" height="540" loading="lazy" decoding="async" />
+        <div class="entry-body">
+          <h3>HealthGuard: IoT-Based Health Monitoring System</h3>
+          <p class="meta">
+            <strong>Patent No. 40/2024 </strong>  · <strong> Application No. 202441070524 A </strong>· Granted Oct 4, 2024 · India
+          </p>
+          <p>Low-cost vitals monitoring with secure data flow and alerting.</p>
+          <div class="row">
+            <span class="pill">IoT</span>
+            <span class="pill">Edge→Cloud</span>
+            <span class="pill">Security</span>
+          </div>
+          <div class="cta-row">
+            <a class="btn link-btn"
+               href="https://search.ipindia.gov.in/IPOJournal/Journal/ViewJournal"
+               target="_blank" rel="noopener noreferrer">View on IPO →</a>
+            <a class="btn ghost backup"
+               href="https://drive.google.com/file/d/1jUNlnrlmSjgdC0ZOrbZf-U8HTIDOiJw7/view?usp=sharing"
+               target="_blank" rel="noopener noreferrer">Backup (Drive) →</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <!-- PUBLICATIONS -->
-    <section id="publications" class="section">
-      <div class="container">
-        <h2>Publications</h2>
-        <div class="grid">
-          <article class="card">
-            <h3>Advancement in Virtual Fitting Rooms</h3>
-            <p class="meta">15th ICCCNT (IEEE), Nov 2024 • IEEE Xplore</p>
-            <p>2D try-on stack with segmentation + pose + geometric warping; ablations on garment texture realism.</p>
-            <div class="cta-row">
-              <a class="link" href="https://ieeexplore.ieee.org/document/10724276" target="_blank" rel="noopener noreferrer">View Publication →</a>
-            </div>
-          </article>
+      <!-- Publication 1 -->
+      <article class="card entry-card">
+        <img class="entry-thumb"
+             src="assets/Publications/vfr-paper.jpg"
+             alt="Virtual Fitting Rooms paper cover"
+             width="960" height="540" loading="lazy" decoding="async" />
+        <div class="entry-body">
+          <h3>Advancement in Virtual Fitting Rooms</h3>
+          <p class="meta">15th ICCCNT (IEEE), Nov 2024 · IEEE Xplore</p>
+          <!-- DOI (hard-coded & always visible) -->
+          <p class="refs meta">
+            <strong>DOI:</strong>
+            <a class="doi-link"
+               href="https://doi.org/10.1109/ICCCNT61001.2024.10724276"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Open DOI 10.1109/ICCCNT61001.2024.10724276">
+              10.1109/ICCCNT61001.2024.10724276
+            </a>
+          </p>
 
-          <article class="card">
-            <h3>Optimizing XGBoost Hyperparameters for Network Intrusion Detection</h3>
-            <p class="meta">ICCCSMD-2024, Dec 2024 • Published</p>
-            <div class="cta-row">
-              <a class="link doi" data-doi="10.1109/ICCCSMD63546.2024.11015173" href="https://ieeexplore.ieee.org/document/11015173" target="_blank" rel="noopener noreferrer">View Publication →</a>
-              <span class="meta" id="doiDisplay" aria-live="polite"></span>
-            </div>
-          </article>
+          <p>2D try-on stack (segmentation + pose + warping) with texture realism ablations.</p>
+          <div class="row">
+            <span class="pill">Computer Vision</span>
+            <span class="pill">Segmentation</span>
+            <span class="pill">Pose</span>
+          </div>
+          <div class="cta-row">
+            <a class="btn link-btn doi"
+               data-doi="10.1109/ICCCNT61001.2024.10724276"
+               href="https://ieeexplore.ieee.org/document/10724276"
+               target="_blank" rel="noopener noreferrer">IEEE Xplore →</a>
+            <a class="btn ghost backup"
+               href="https://drive.google.com/file/d/1otgsUfyvUCnLaW6yQAyRShDIu6QHolgv/view?usp=sharing"
+               target="_blank" rel="noopener noreferrer">Backup (Drive) →</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </article>
+
+      <!-- Publication 2 -->
+      <article class="card entry-card">
+        <img class="entry-thumb"
+             src="assets/Publications/xgboost-ids.jpg"
+             alt="XGBoost IDS paper thumbnail"
+             width="960" height="540" loading="lazy" decoding="async" />
+        <div class="entry-body">
+          <h3>Optimizing XGBoost Hyperparameters for Network Intrusion Detection</h3>
+          <p class="meta">ICCCSMD-2024, Dec 2024 · IEEE</p>
+          <!-- DOI (hard-coded & always visible) -->
+          <p class="refs meta">
+            <strong>DOI:</strong>
+            <a class="doi-link"
+               href="https://doi.org/10.1109/ICCCSMD63546.2024.11015173"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Open DOI 10.1109/ICCCSMD63546.2024.11015173">
+              10.1109/ICCCSMD63546.2024.11015173
+            </a>
+          </p>
+
+          <p>Precision-oriented IDS with threshold calibration to cut false positives.</p>
+          <div class="row">
+            <span class="pill">XGBoost</span>
+            <span class="pill">UNSW-NB15</span>
+            <span class="pill">AUC-PR</span>
+          </div>
+          <div class="cta-row">
+            <a class="btn link-btn doi"
+               data-doi="10.1109/ICCCSMD63546.2024.11015173"
+               href="https://ieeexplore.ieee.org/document/11015173"
+               target="_blank" rel="noopener noreferrer">IEEE Xplore →</a>
+            <a class="btn ghost backup"
+               href="https://drive.google.com/file/d/1A11L8CxVeWU3eiuIWvLIyVh_bH5oRA2c/view?usp=sharing"
+               target="_blank" rel="noopener noreferrer">Backup (Drive) →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+
 
     <!-- BLOG -->
     <section id="blog" class="section">
