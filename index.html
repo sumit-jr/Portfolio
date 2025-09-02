@@ -2,24 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sumit Prasad Sah – Portfolio</title>
   <meta name="description" content="AI & Cybersecurity Researcher | IEEE Author & Patent Holder. Projects in virtual try-on, intrusion detection, IoT health monitoring, and more." />
   <link rel="canonical" href="https://sumit-jr.github.io/Portfolio/" />
   <link rel="stylesheet" href="css/styles.css" />
 
-  <!-- Open Graph -->
+  <!-- Open Graph (add a real image at assets/og-cover.jpg) -->
   <meta property="og:title" content="Sumit Prasad Sah – Portfolio" />
   <meta property="og:description" content="AI & Cybersecurity Researcher | IEEE Author & Patent Holder." />
   <meta property="og:url" content="https://sumit-jr.github.io/Portfolio/" />
   <meta property="og:type" content="website" />
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta property="og:image" content="https://sumit-jr.github.io/Portfolio/assets/og-cover.jpg" />
+  <meta property="og:image:alt" content="Portfolio preview of Sumit Prasad Sah" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@sumitsah_jr" />
+  <meta name="twitter:creator" content="@sumitsah_jr" />
+  <meta name="twitter:image" content="https://sumit-jr.github.io/Portfolio/assets/og-cover.jpg" />
+
+  <!-- Theming for browsers -->
+  <meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)">
+
+  <!-- Favicons + Manifest (place these assets) -->
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Font Awesome (CDN) with SRI -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-IfW2TvzVK1kBf0j6vKQbPSuDZ0F+UXBUnr59CdQMYjD6L9w3y3U+BrHZr10L0M/66K8uJxiV0jD20/HSY5qfVA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer">
 
   <!-- Schema.org Person -->
   <script type="application/ld+json">
@@ -29,6 +47,8 @@
     "name":"Sumit Prasad Sah",
     "jobTitle":"AI & Cybersecurity Researcher",
     "url":"https://sumit-jr.github.io/Portfolio/",
+    "image":"https://sumit-jr.github.io/Portfolio/assets/profile.jpg",
+    "email":"mailto:er.sumitsah@gmail.com",
     "sameAs":[
       "https://www.linkedin.com/in/sumit-prasad-sah/",
       "https://github.com/Sumit-jr",
@@ -45,22 +65,21 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <img src="assets/logo.png" alt="Sumit Sah Logo" class="logo" />
+        <img src="assets/logo.png" alt="Sumit Sah Logo" class="logo" width="112" height="28" loading="eager" decoding="async" />
         <span class="site-title">Sumit Sah</span>
       </div>
 
       <nav aria-label="Primary">
-        <ul>
+        <ul id="primaryNav">
           <li><a href="#projects">Projects</a></li>
           <li><a href="#patents">Patents</a></li>
           <li><a href="#publications">Publications</a></li>
           <li><a href="#blog">Blog</a></li>
           <li><a href="#contact">Contact</a></li>
-          <!-- Resume (Google Drive) as a highlighted pill -->
           <li>
             <a class="resume-link"
                href="https://drive.google.com/file/d/1PKXmP5zoaHBZysdhuRuYv9c9yLVDsiVt/view?usp=sharing"
-               target="_blank" rel="noopener">
+               target="_blank" rel="noopener noreferrer" aria-label="Open resume (PDF)">
               Resume
             </a>
           </li>
@@ -76,12 +95,12 @@
 
   <main id="main">
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" id="top">
       <div class="container two-col">
-        <!-- LEFT: Intro -->
         <div class="card">
           <div class="profile">
-            <img src="assets/profile.jpg" alt="Portrait of Sumit Prasad Sah" class="profile-pic" />
+            <img src="assets/profile.jpg" alt="Portrait of Sumit Prasad Sah" class="profile-pic"
+                 width="256" height="256" fetchpriority="high" loading="eager" decoding="async"/>
             <h1 class="name">Sumit Sah</h1>
           </div>
 
@@ -93,7 +112,6 @@
             and production-ready. IEEE-published author and patent holder, passionate about turning innovation into real-world impact.
           </p>
 
-          <!-- Skills -->
           <div class="row">
             <span class="chip skill">Python</span>
             <span class="chip skill">XGBoost</span>
@@ -105,13 +123,12 @@
           </div>
         </div>
 
-        <!-- RIGHT: Quick Facts + Socials -->
         <div class="card quick-facts">
           <p class="kicker">Quick Facts</p>
           <div class="row">
-            <span class="badge"><i class="fa-solid fa-file-lines"></i> IEEE Author</span>
-            <span class="badge"><i class="fa-solid fa-shield-halved"></i> Patent Holder</span>
-            <span class="badge"><i class="fa-solid fa-graduation-cap"></i> B.Tech CSE</span>
+            <span class="badge"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> IEEE Author</span>
+            <span class="badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Patent Holder</span>
+            <span class="badge"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> B.Tech CSE</span>
           </div>
           <ul class="meta list">
             <li>Published at 15th ICCCNT (IEEE)</li>
@@ -119,29 +136,26 @@
             <li>Focus: SOC-oriented ML, CV, IoT</li>
           </ul>
           <p class="availability" role="note">
-  <span class="dot" aria-hidden="true"></span>
-  Open to research & security roles.
-  <a class="contact-btn" href="mailto:er.sumitsah@gmail.com">Contact →</a>
-</p>
+            <span class="dot" aria-hidden="true"></span>
+            Open to research & security roles.
+            <a class="contact-btn" href="mailto:er.sumitsah@gmail.com">Contact →</a>
+          </p>
 
-
-
-          <!-- Socials -->
           <div class="socials" aria-label="Social profiles">
-            <a class="chip social" data-brand="linkedin" href="https://www.linkedin.com/in/sumit-prasad-sah/" target="_blank" rel="noopener">
-              <i class="fa-brands fa-linkedin"></i> LinkedIn
+            <a class="chip social" data-brand="linkedin" href="https://www.linkedin.com/in/sumit-prasad-sah/" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span>
             </a>
-            <a class="chip social" data-brand="github" href="https://github.com/Sumit-jr" target="_blank" rel="noopener">
-              <i class="fa-brands fa-github"></i> GitHub
+            <a class="chip social" data-brand="github" href="https://github.com/Sumit-jr" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> <span>GitHub</span>
             </a>
-            <a class="chip social" data-brand="medium" href="https://medium.com/@er.sumitsah" target="_blank" rel="noopener">
-              <i class="fa-brands fa-medium"></i> Medium
+            <a class="chip social" data-brand="medium" href="https://medium.com/@er.sumitsah" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> <span>Medium</span>
             </a>
-            <a class="chip social" data-brand="twitter" href="https://twitter.com/sumitsah_jr" target="_blank" rel="noopener">
-              <i class="fa-brands fa-x-twitter"></i> Twitter
+            <a class="chip social" data-brand="twitter" href="https://twitter.com/sumitsah_jr" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-x-twitter" aria-hidden="true"></i> <span>Twitter</span>
             </a>
-            <a class="chip social" data-brand="orcid" href="https://orcid.org/0009-0001-8084-7935" target="_blank" rel="noopener">
-              <i class="fa-brands fa-orcid"></i> ORCID
+            <a class="chip social" data-brand="orcid" href="https://orcid.org/0009-0001-8084-7935" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-orcid" aria-hidden="true"></i> <span>ORCID</span>
             </a>
           </div>
         </div>
@@ -155,16 +169,16 @@
         <p class="lead">Impact-driven engineering across AI, cybersecurity, and full-stack dev.</p>
         <div class="grid">
           <article class="card">
-            <h3>Streaming Platform (Series) — Ruby on Rails</h3>
+            <h3>Movie Metadata Organiser — Ruby on Rails</h3>
             <p class="meta">Rails · Devise · Stripe · Action Cable · Tailwind</p>
-            <p>Built a role-based streaming platform with secure one-time payments, real-time notifications, and responsive UI.</p>
+            <p>Role-based platform with secure one-time payments, real-time notifications, and responsive UI.</p>
             <div class="row">
               <span class="pill">RBAC</span>
               <span class="pill">Stripe</span>
               <span class="pill">Realtime</span>
             </div>
             <div class="cta-row">
-              <a class="link" href="https://github.com/sumit-jr/Movie-Metadata-Organiser" target="_blank" rel="noopener">Code →</a>
+              <a class="link" href="https://github.com/sumit-jr/Movie-Metadata-Organiser" target="_blank" rel="noopener noreferrer">Code →</a>
             </div>
           </article>
 
@@ -178,7 +192,7 @@
               <span class="pill">Warping</span>
             </div>
             <div class="cta-row">
-              <a class="link" href="https://github.com/sumit-jr/clothes_virtual_try_on" target="_blank" rel="noopener">Code →</a>
+              <a class="link" href="https://github.com/sumit-jr/clothes_virtual_try_on" target="_blank" rel="noopener noreferrer">Code →</a>
             </div>
           </article>
 
@@ -192,7 +206,7 @@
               <span class="pill">Threshold Tuning</span>
             </div>
             <div class="cta-row">
-              <a class="link" href="https://github.com/Sumit-jr/Optimizing-XGBoost-Hyperparameters-for-Network-Intrusion-Detection" target="_blank" rel="noopener">Code →</a>
+              <a class="link" href="https://github.com/Sumit-jr/Optimizing-XGBoost-Hyperparameters-for-Network-Intrusion-Detection" target="_blank" rel="noopener noreferrer">Code →</a>
             </div>
           </article>
 
@@ -206,7 +220,7 @@
               <span class="pill">Dashboards</span>
             </div>
             <div class="cta-row">
-              <a class="link" href="https://github.com/sumit-jr/HealthGuard-IoT-Based-Health-Monitoring-System" target="_blank" rel="noopener">Code →</a>
+              <a class="link" href="https://github.com/sumit-jr/HealthGuard-IoT-Based-Health-Monitoring-System" target="_blank" rel="noopener noreferrer">Code →</a>
             </div>
           </article>
 
@@ -220,7 +234,7 @@
               <span class="pill">Deployment</span>
             </div>
             <div class="cta-row">
-              <a class="link" href="https://github.com/sumit-jr/Chicken-Disease-Classification-Projects" target="_blank" rel="noopener">Code →</a>
+              <a class="link" href="https://github.com/sumit-jr/Chicken-Disease-Classification-Projects" target="_blank" rel="noopener noreferrer">Code →</a>
             </div>
           </article>
         </div>
@@ -237,7 +251,7 @@
             <p class="meta">Patent Number: 40/2024 • Granted Oct 4, 2024</p>
             <p>Low-cost IoT vitals monitoring with secure data handling and alerting for clinics and remote care.</p>
             <div class="cta-row">
-              <a class="link" href="https://search.ipindia.gov.in/IPOJournal/Journal/ViewJournal" target="_blank" rel="noopener">View Patent →</a>
+              <a class="link" href="https://search.ipindia.gov.in/IPOJournal/Journal/ViewJournal" target="_blank" rel="noopener noreferrer">View Patent →</a>
             </div>
           </article>
         </div>
@@ -254,20 +268,16 @@
             <p class="meta">15th ICCCNT (IEEE), Nov 2024 • IEEE Xplore</p>
             <p>2D try-on stack with segmentation + pose + geometric warping; ablations on garment texture realism.</p>
             <div class="cta-row">
-              <a class="link" href="https://ieeexplore.ieee.org/document/10724276" target="_blank" rel="noopener">View Publication →</a>
+              <a class="link" href="https://ieeexplore.ieee.org/document/10724276" target="_blank" rel="noopener noreferrer">View Publication →</a>
             </div>
           </article>
 
           <article class="card">
             <h3>Optimizing XGBoost Hyperparameters for Network Intrusion Detection</h3>
             <p class="meta">ICCCSMD-2024, Dec 2024 • Published</p>
-            <p>Feature selection + threshold tuning on UNSW-NB15; precision-oriented setup to reduce alert fatigue.</p>
             <div class="cta-row">
-              <a class="link doi"
-                 data-doi="10.1109/ICCCSMD63546.2024.11015173"
-                 href="https://ieeexplore.ieee.org/document/11015173"
-                 target="_blank" rel="noopener">View Publication →</a>
-              <span class="meta" id="doiDisplay">(DOI: 10.1109/ICCCSMD63546.2024.11015173)</span>
+              <a class="link doi" data-doi="10.1109/ICCCSMD63546.2024.11015173" href="https://ieeexplore.ieee.org/document/11015173" target="_blank" rel="noopener noreferrer">View Publication →</a>
+              <span class="meta" id="doiDisplay" aria-live="polite"></span>
             </div>
           </article>
         </div>
@@ -297,7 +307,7 @@
           </article>
         </div>
         <div class="cta-row" style="margin-top:10px;">
-          <a class="link" href="https://medium.com/@er.sumitsah" target="_blank" rel="noopener">See More on Medium →</a>
+          <a class="link" href="https://medium.com/@er.sumitsah" target="_blank" rel="noopener noreferrer">See More on Medium →</a>
         </div>
       </div>
     </section>
@@ -307,13 +317,21 @@
       <div class="container">
         <h2>Contact</h2>
         <p class="lead">Want to collaborate or chat about research/engineering? I read every message.</p>
-        <form action="https://formspree.io/f/your-form-id" method="POST">
+        <form action="https://formsubmit.co/er.sumitsah@gmail.com" method="POST">
+          <input type="hidden" name="_next" value="https://sumit-jr.github.io/Portfolio/thankyou.html">
+          <input type="hidden" name="_subject" value="Portfolio Contact">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="text" name="_honey" style="display:none">
+
           <label class="sr-only" for="name">Name</label>
           <input id="name" name="name" placeholder="Your name" required />
+
           <label class="sr-only" for="email">Email</label>
           <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
           <label class="sr-only" for="msg">Message</label>
           <textarea id="msg" name="message" placeholder="How can I help?" required></textarea>
+
           <button class="btn" type="submit">Send Message</button>
         </form>
         <p class="meta" style="margin-top:10px;">
@@ -327,7 +345,7 @@
       <div class="container">
         <h2>Resume</h2>
         <p class="lead">Prefer a single page? Grab the PDF.</p>
-        <a class="btn" href="assets/Sumit_Sah_Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+        <a class="btn" href="assets/Sumit_Sah_Resume.pdf" target="_blank" rel="noopener noreferrer">Download Resume</a>
       </div>
     </section>
   </main>
@@ -337,15 +355,19 @@
       <div class="row center">
         <span>© <span id="year"></span> <strong>Sumit Sah</strong></span>
         <span class="sep">·</span>
-        <a class="link" href="https://twitter.com/sumitsah_jr" target="_blank" rel="noopener">Twitter</a>
+        <a class="link" href="https://twitter.com/sumitsah_jr" target="_blank" rel="noopener noreferrer">Twitter</a>
         <span class="sep">·</span>
-        <a class="link" href="https://www.linkedin.com/in/sumit-prasad-sah/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="link" href="https://www.linkedin.com/in/sumit-prasad-sah/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <span class="sep">·</span>
-        <a class="link" href="https://github.com/Sumit-jr" target="_blank" rel="noopener">GitHub</a>
+        <a class="link" href="https://github.com/Sumit-jr" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </div>
+    <noscript>
+      <style>html{scroll-behavior:auto!important}</style>
+      <p class="meta" style="text-align:center">JavaScript is disabled. Theme toggle and animations are reduced.</p>
+    </noscript>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>
