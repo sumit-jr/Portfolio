@@ -318,22 +318,34 @@
         <h2>Contact</h2>
         <p class="lead">Want to collaborate or chat about research/engineering? I read every message.</p>
         <form action="https://formsubmit.co/er.sumitsah@gmail.com" method="POST">
+          <!-- Redirect to thank-you page after submit -->
           <input type="hidden" name="_next" value="https://sumit-jr.github.io/Portfolio/thankyou.html">
+          
+          <!-- Optional settings -->
           <input type="hidden" name="_subject" value="Portfolio Contact">
           <input type="hidden" name="_captcha" value="true">
           <input type="text" name="_honey" style="display:none">
 
+          <!-- Visible fields -->
           <label class="sr-only" for="name">Name</label>
-          <input id="name" name="name" placeholder="Your name" required />
+          <input id="name" name="name" placeholder="Your name" required>
 
           <label class="sr-only" for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          <input id="email" name="email" type="email" 
+                placeholder="you@example.com" required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                title="Please enter a valid email address (e.g. name@example.com)">
 
           <label class="sr-only" for="msg">Message</label>
           <textarea id="msg" name="message" placeholder="How can I help?" required></textarea>
 
           <button class="btn" type="submit">Send Message</button>
         </form>
+
+
+        <input type="hidden" name="_next" value="https://sumit-jr.github.io/Portfolio/thankyou.html">
+
+
         <p class="meta" style="margin-top:10px;">
           Or email me directly: <a class="link" href="mailto:er.sumitsah@gmail.com">er.sumitsah@gmail.com</a>
         </p>
