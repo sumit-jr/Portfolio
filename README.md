@@ -1,108 +1,68 @@
-<h1 align="center">Welcome to Portfolio 👋</h1>
-<a href="https://github.com/Sumit-jr/Portfolio/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/Sumit-jr/Portfolio"></a>
-<a href="https://github.com/Sumit-jr/Portfolio/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/Sumit-jr/Portfolio"></a>
-<a href="https://github.com/Sumit-jr/Portfolio/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/Sumit-jr/Portfolio"></a> 
-<a href="https://github.com/Sumit-jr/Portfolio/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Sumit-jr/Portfolio"></a>
+# Sumit Prasad Sah — Portfolio
 
-## [DEMO](https://sumit-jr.github.io/Portfolio/)
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-    <img src="assets/favicon.svg" alt="Logo" width="80" height="80">
-  </a>
+[![Deploy – GitHub Pages](https://img.shields.io/badge/deploy-github%20pages-24292e)](https://sumit-jr.github.io/Portfolio/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](#license)
 
-  <h2 align="center">Hey there, I'm Sumit. Glad to see you!</h2>
+A fast, accessible, mobile-first portfolio focused on **AI & Cybersecurity research**.  
+Highlights: intrusion detection with XGBoost, virtual try-on, and an IoT vitals system (**patent granted**), plus publications with **DOIs**.
 
-  <p align="center">
-    This is a brief description of my portfolio project.
-    <br />
-    <br />
-    <a href="https://sumit-jr.github.io/Portfolio/"> <strong>View Project</strong></a>
-    ·
-    <a href="https://github.com/Sumit-jr/Portfolio/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/Sumit-jr/Portfolio/issues">Request Feature</a>
-  </p>
-</p>
+**Live:** https://sumit-jr.github.io/Portfolio/
 
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
+---
 
-<!-- ABOUT THE PROJECT -->
+## Features
+- **Responsive UI**: sticky header, mobile hamburger, equal-height cards
+- **Dark mode by default** with a **theme toggle** (persisted via `localStorage`)
+- **Research-friendly**: DOIs, ORCID, code links per project
+- **Contact form** via FormSubmit (no backend)
+- **A11y**: skip link, focus states, reduced-motion support
+- **SEO/social**: canonical URL, Open Graph/Twitter cards, `schema.org/Person`
 
-## About The Project
+---
 
-![Product Name Screen Shot](https://github.com/sumit-jr/Portfolio/blob/master/assets/project-screenshot.png)
+## Screenshots
+> Replace with your own images if desired.
 
-Hey there, this is my portfolio project where I showcase my work and the type of projects I build.
+![Open Graph preview](assets/home-desktop.png)
 
-Here's what you can find:
+| Projects | Works |
+|---|---|
+| ![Virtual Try-On](assets/Projects/virtual-tryon.png) | ![HealthGuard Patent](assets/Patents/healthguard-patent.jpg) |
 
-- Projects I built and the tech stack used in each one.
-- Programming languages, frameworks, and tools that I use.
+---
 
-### Built With
+## Tech Stack
+- **HTML5** (semantic layout, meta/OG/Twitter, JSON-LD)
+- **CSS3** (custom properties, grid/flex, modern media queries)
+- **Vanilla JS** (theme toggle, menu, IntersectionObserver animations)
 
-- [HTML](https://www.w3schools.com/html/)
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-- [JavaScript](https://javascript.info/)
+---
 
-<!-- GETTING STARTED -->
+## Structure
+```text
+Portfolio/
+├─ index.html
+├─ thankyou.html
+├─ css/
+│  └─ styles.css
+├─ js/
+│  └─ app.js
+└─ assets/
+   ├─ logo.png
+   ├─ profile.jpg
+   ├─ og-cover.jpg
+   ├─ Projects/
+   ├─ Patents/
+   └─ Publications/
+```
+# Getting Started
 
-## Getting Started
+## Prerequisites
+- Any static server (or just open `index.html` directly).
 
-To get a local copy up and running follow these simple example steps.
+## Run locally
 
-### Prerequisites
+**Option A:** Open `index.html` in your browser.  
 
-- Git and any terminal to run commands.
-
-### Installation
-
-- Clone the repo
-   ```sh
-   https://github.com/Sumit-jr/Portfolio.git
-   ```
-
-<!-- USAGE EXAMPLES -->
-
-## Usage
-
-1. Edit projects array in HTML file and see the result on your browser
-2. Copy the project path and run on any browser.
-<!-- ROADMAP -->
-
-
-
-<!-- LICENSE -->
-
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-<!-- CONTACT -->
-
-## Contact
-
-Sumit - [@SumitSah_jr](https://twitter.com/SumitSah_Jr) - er.sumitsah@gmail.com
-
+**Option B:** Serve the folder:
+bash # from repo root python3 -m http.server 8080 # visit http://localhost:8080
