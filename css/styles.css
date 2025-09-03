@@ -158,6 +158,7 @@ nav a:focus-visible{ outline:2px solid var(--ring); outline-offset:3px; border-r
   background: transparent;
   border: 1px solid color-mix(in oklab, var(--text) 15%, transparent);
   color: var(--text);
+  margin-bottom: 8px;
 }
 .chip.social i{ font-size:14px; }
 .chip.social[data-brand="linkedin"] i{ color:#0A66C2; }
