@@ -13,6 +13,8 @@
   --drive:#0F9D58; /* Google Drive green */
 
   --pill-text:#0c0f14;
+
+  --h2: var(--text);
 }
 :root.light{
   --bg:#f7f8fb; --bg-soft:#fff; --surface:#fff;
@@ -24,6 +26,7 @@
   --cta2-start:#0aa06f; --cta2-end:#056f52;
   --drive:#138A4C;
 
+  ---h2: var(--text);
 }
 
 /* ==============================================================
@@ -419,6 +422,8 @@ footer{ color:var(--muted); padding:34px 0 48px; text-align:center; }
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-
-
-
+.section h2{
+  color: var(--h2);
+  letter-spacing: .2px;
+  font-weight: 800;
+}
