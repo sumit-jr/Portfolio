@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sumit Prasad Sah – Portfolio</title>
   <meta name="description" content="AI & Cybersecurity Researcher | IEEE Author & Patent Holder. Projects in virtual try-on, intrusion detection, IoT health monitoring, and more." />
+
+<!-- Prevent light→dark flash for users who picked light -->
+  <script>
+    try{
+      if(localStorage.getItem('theme')==='light'){
+        document.documentElement.classList.add('light');
+      }
+    }catch(e){}
+  </script>
+
   <link rel="canonical" href="https://sumit-jr.github.io/Portfolio/" />
   <link rel="stylesheet" href="css/styles.css" />
 
@@ -508,8 +518,6 @@
 
   </div>
 </section>
-
-
 
     <!-- CONTACT -->
 <section id="contact" class="section">

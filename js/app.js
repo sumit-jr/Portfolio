@@ -5,26 +5,39 @@ const on   = (el, ev, fn, opts)     => el && el.addEventListener(ev, fn, opts);
 const prefersReducedMotion = () =>
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* ---------- Theme toggle + persistence ---------- */
+/* ---------- Theme toggle + persistence (default = DARK) ---------- */
 (() => {
   const root   = document.documentElement;
   const toggle = $("#themeToggle");
-  const saved  = localStorage.getItem("theme");
 
-  if (!saved) {
-    if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-      root.classList.add("light");
-    }
-  } else if (saved === "light") {
-    root.classList.add("light");
-  }
+  const apply = (mode) => {
+    if (mode === "light") root.classList.add("light");
+    else root.classList.remove("light"); // dark
+    try { localStorage.setItem("theme", mode); } catch (_) {}
+  };
+
+  let saved = null;
+  try { saved = localStorage.getItem("theme"); } catch (_) {}
+
+  // First visit (or no saved choice): default to DARK (ignore OS preference)
+  if (!saved) apply("dark");
+  else apply(saved === "light" ? "light" : "dark");
 
   if (toggle) {
     on(toggle, "click", () => {
       const isLight = root.classList.toggle("light");
-      localStorage.setItem("theme", isLight ? "light" : "dark");
+      try { localStorage.setItem("theme", isLight ? "light" : "dark"); } catch (_) {}
     });
   }
+
+  // Keep theme correct on bfcache restore & cross-tab changes
+  on(window, "pageshow", () => {
+    const mode = (localStorage.getItem("theme") === "light") ? "light" : "dark";
+    apply(mode);
+  });
+  on(window, "storage", (e) => {
+    if (e.key === "theme") apply(e.newValue === "light" ? "light" : "dark");
+  });
 })();
 
 /* ---------- Footer year ---------- */
@@ -132,10 +145,10 @@ const prefersReducedMotion = () =>
 
 /* ---------- Mobile menu toggle (hamburger) ---------- */
 (() => {
-  const btn   = document.getElementById("menuToggle");
-  const nav   = document.getElementById("primaryNav");
+  const btn   = $("#menuToggle");
+  const nav   = $("#primaryNav");
   const root  = document.documentElement;
-  const hdr   = document.querySelector("header");
+  const hdr   = $("header");
   if (!btn || !nav || !hdr) return;
 
   const setHeaderH = () => {
@@ -143,7 +156,7 @@ const prefersReducedMotion = () =>
     root.style.setProperty("--headerH", `${h}px`);
   };
   setHeaderH();
-  window.addEventListener("resize", setHeaderH, { passive: true });
+  on(window, "resize", setHeaderH, { passive: true });
 
   const open = () => {
     document.body.classList.add("menu-open");
@@ -158,17 +171,17 @@ const prefersReducedMotion = () =>
     else open();
   };
 
-  btn.addEventListener("click", toggle);
+  on(btn, "click", toggle);
+
   // Close when clicking a link inside the nav
-  nav.addEventListener("click", (e) => {
+  on(nav, "click", (e) => {
     const a = e.target.closest("a");
     if (a) close();
   });
+
   // Close on Escape, or when clicking outside
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") close();
-  });
-  document.addEventListener("click", (e) => {
+  on(document, "keydown", (e) => { if (e.key === "Escape") close(); });
+  on(document, "click", (e) => {
     if (!document.body.classList.contains("menu-open")) return;
     if (e.target.closest("header")) return; // clicks within header are fine
     close();
