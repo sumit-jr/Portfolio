@@ -794,3 +794,26 @@ footer{ color:var(--muted); padding:34px 0 48px; text-align:center; }
   box-shadow: 0 8px 20px rgba(0,0,0,.18);
 }
 
+/* Mobile/touch: remove hover effects; keep tap feedback */
+@media (hover: none) {
+  /* neutralize any hover-driven changes */
+  .pill:hover,
+  #projects.hover-enabled .pill:hover,
+  .hover-scope.hover-enabled .pill:hover {
+    background: inherit;
+    color: inherit;
+    border-color: inherit;
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* consistent tap (active) feedback */
+  .pill:active {
+    transform: scale(0.98);
+    filter: brightness(0.97);
+    box-shadow: none;
+  }
+
+  /* optional: avoid sticky hover highlight on iOS */
+  .pill { -webkit-tap-highlight-color: transparent; }
+}
