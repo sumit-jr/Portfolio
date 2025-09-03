@@ -503,3 +503,8 @@ footer{ color:var(--muted); padding:34px 0 48px; text-align:center; }
   display: flex;
   justify-content: center;
 }
+
+/* Override just for blog cards */
+#blog .post-cta{
+  margin-top: 12px !important;  /* pick 8–14px to taste */
+}
