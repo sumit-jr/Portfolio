@@ -487,3 +487,46 @@ footer{ color:var(--muted); padding:34px 0 48px; text-align:center; }
   display: flex;
   justify-content: center;
 }
+
+/* Center the Contact section content */
+#contact h2,
+#contact .lead { 
+  text-align: center;
+}
+
+/* Constrain and center the form */
+#contact form {
+  max-width: 640px;           /* tweak: 560–720px works well */
+  margin: 0 auto;             /* centers inside the container */
+}
+
+/* Make fields fill the available width cleanly */
+#contact input,
+#contact textarea {
+  width: 100%;
+}
+
+/* Keep the submit button visually centered (not full-width) */
+#contact form .btn {
+  justify-self: center;       /* since the form is display:grid in your CSS */
+}
+/* Optional: give the contact area a card look without changing HTML */
+#contact .container {
+  display: grid;
+  justify-items: center;
+}
+
+#contact .container > *:not(h2):not(.lead) {
+  width: 100%;
+  max-width: 720px;
+}
+
+#contact form {
+  background: var(--card);
+  border: 1px solid color-mix(in oklab, var(--text) 15%, transparent);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+
