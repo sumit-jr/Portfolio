@@ -1,6 +1,4 @@
-/* =====================================================================
-   app.js — Refactored (theme, year, fade-in, DOI, nav active, hover gating)
-   ===================================================================== */
+
 
 /* ---------- Utilities ---------- */
 const $    = (sel, root = document) => root.querySelector(sel);
