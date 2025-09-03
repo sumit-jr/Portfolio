@@ -63,35 +63,45 @@
 <body>
   <a href="#main" class="sr-only">Skip to content</a>
 
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <img src="assets/logo.png" alt="Sumit Sah Logo" class="logo" width="112" height="28" loading="eager" decoding="async" />
-        <span class="site-title">Sumit Sah</span>
-      </div>
-
-      <nav aria-label="Primary">
-        <ul id="primaryNav">
-          <li><a href="#projects">Research & Projects</a></li>
-          <li><a href="#works">Patents & Publications</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li>
-            <a class="resume-link"
-               href="https://drive.google.com/file/d/1PKXmP5zoaHBZysdhuRuYv9c9yLVDsiVt/view?usp=sharing"
-               target="_blank" rel="noopener noreferrer" aria-label="Open resume (PDF)">
-              Resume
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-      <div class="actions">
-        <button id="themeToggle" class="toggle" aria-label="Toggle light/dark theme">🌓</button>
-        <a class="btn ghost" href="#contact">Say Hello 👋</a>
-      </div>
+  <!-- NAVBAR -->
+  <header class="site-header">
+  <div class="nav-container container">
+    <div class="site-branding">
+      <img src="assets/logo.png" alt="Sumit Sah Logo" class="logo" width="112" height="28" loading="eager" decoding="async" />
+      <a href="index.html" class="site-title">Sumit Sah</a>
     </div>
-  </header>
+
+    <nav aria-label="Primary">
+      <ul id="primaryNav" class="nav-menu">
+        <li><a href="#projects">Research & Projects</a></li>
+        <li><a href="#works">Patents & Publications</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a class="resume-link"
+             href="https://drive.google.com/file/d/1PKXmP5zoaHBZysdhuRuYv9c9yLVDsiVt/view?usp=sharing"
+             target="_blank" rel="noopener noreferrer">Resume</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="actions">
+      <!-- Light/Dark toggle (works with your existing JS) -->
+  <button id="themeToggle" class="toggle" aria-label="Toggle light/dark">🌓</button>
+
+      <!-- Hamburger on the RIGHT -->
+      <button id="menuToggle" class="hamburger" aria-label="Open menu" aria-controls="primaryNav" aria-expanded="false">
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+      </button>
+
+      <!-- Keep or remove this as you wish -->
+      <a class="btn ghost" href="#contact">Say Hello 👋</a>
+    </div>
+  </div>
+</header>
+
 
   <main id="main">
     <!-- HERO -->
@@ -112,7 +122,7 @@
             and production-ready. IEEE-published author and patent holder, passionate about turning innovation into real-world impact.
           </p>
 
-          <div class="row">
+          <div class="row skills-row">
             <span class="chip skill">Python</span>
             <span class="chip skill">XGBoost</span>
             <span class="chip skill">TensorFlow</span>
@@ -545,24 +555,41 @@
 </section>
 
 <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="row center">
-        <span>© <span id="year"></span> <strong>Sumit Sah</strong></span>
-        <span class="sep">·</span>
-        <a class="link" href="https://twitter.com/sumitsah_jr" target="_blank" rel="noopener noreferrer">Twitter</a>
-        <span class="sep">·</span>
-        <a class="link" href="https://www.linkedin.com/in/sumit-prasad-sah/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <span class="sep">·</span>
-        <a class="link" href="https://github.com/Sumit-jr" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </div>
+  <footer class="site-footer">
+  <div class="container foot-flex">
+    
+    <!-- Socials Left -->
+    <div class="foot-socials">
+      <a href="https://www.linkedin.com/in/sumit-prasad-sah/" target="_blank" rel="noopener" data-brand="linkedin">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/Sumit-jr" target="_blank" rel="noopener" data-brand="github">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="https://medium.com/@er.sumitsah" target="_blank" rel="noopener" data-brand="medium">
+        <i class="fa-brands fa-medium"></i>
+      </a>
+      <a href="https://twitter.com/sumitsah_jr" target="_blank" rel="noopener" data-brand="twitter">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
+      <a href="https://orcid.org/0009-0001-8084-7935" target="_blank" rel="noopener" data-brand="orcid">
+        <i class="fa-brands fa-orcid"></i>
+      </a>
     </div>
-    <noscript>
-      <style>html{scroll-behavior:auto!important}</style>
-      <p class="meta" style="text-align:center">JavaScript is disabled. Theme toggle and animations are reduced.</p>
-    </noscript>
-  </footer>
 
+    <!-- Center Branding -->
+    <div class="foot-name">
+      © <span id="year"></span> <strong>Sumit Sah</strong>
+    </div>
+
+    <!-- Resume Right -->
+    <div class="foot-cta">
+      <a class="resume-btn" href="assets/Sumit_Sah_Resume.pdf" target="_blank" rel="noopener noreferrer">
+        Download Resume
+      </a>
+    </div>
+  </div>
+</footer>
   <script src="js/app.js" defer></script>
 </body>
 </html>

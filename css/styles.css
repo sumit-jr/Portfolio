@@ -53,21 +53,27 @@ img{ max-width:100%; display:block; height:auto; }
    LAYOUT + HEADER
    ============================================================== */
 .container{ width:min(1100px,92%); margin-inline:auto; }
-header{
+
+/* ==============================================================
+   NAVIGATION
+   ============================================================== */
+.site-header{
   position:sticky; top:0; z-index:50;
   backdrop-filter:saturate(130%) blur(8px);
   background: rgba(0,0,0,.7);
   border-bottom:1px solid color-mix(in oklab, var(--text) 15%, transparent);
 }
 :root.light header{ background: rgba(255,255,255,.9); }
-.nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
-.brand{ display:flex; gap:12px; align-items:center; }
+
+.nav-container{ 
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; padding:12px 20px;
+}
+
+.site-branding{ display:flex; align-items:center; gap:10px; }
 .logo{ height:28px; width:auto; display:block; }
 .site-title{ font-size:18px; letter-spacing:.3px; font-weight:700; }
 
-/* ==============================================================
-   NAVIGATION
-   ============================================================== */
 nav ul{ display:flex; gap:18px; list-style:none; padding:0; margin:0; }
 nav a:not(.resume-link){
   position:relative; padding:8px 12px; border-radius:10px;
@@ -104,11 +110,82 @@ nav a:focus-visible{ outline:2px solid var(--ring); outline-offset:3px; border-r
   background: linear-gradient(135deg, var(--brand), var(--brand-2));
   color:#fff; box-shadow:var(--shadow);
 }
-.toggle{
-  inline-size:42px; block-size:38px; border-radius:12px; display:grid; place-items:center;
-  border:1px solid color-mix(in oklab, var(--text) 15%, transparent);
-  background: color-mix(in oklab, var(--text) 5%, transparent);
-  cursor:pointer;
+
+/* Hamburger menu - hidden by default */
+.hamburger{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 32px;
+  border: 0; 
+  background: transparent; 
+  cursor: pointer;
+}
+.hamburger .bar{
+  height: 2px; 
+  width: 22px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+/* Mobile menu styles */
+@media (max-width: 1024px){
+  .hamburger{ 
+    display: flex;
+    z-index: 100;
+  }
+  
+  /* Hide desktop nav */
+  .nav-menu{
+    position: fixed; 
+    left: 0; 
+    right: 0; 
+    top: 64px;
+    display: flex; 
+    flex-direction: column; 
+    gap: 12px;
+    background: var(--bg-soft);
+    padding: 16px 20px 20px;
+    transform: translateY(-120%);
+    transition: transform .28s ease;
+    border-bottom: 1px solid color-mix(in oklab, var(--text) 15%, transparent);
+    z-index: 99;
+  }
+  
+  /* When menu is open */
+  .menu-open .nav-menu{ 
+    transform: translateY(0);
+  }
+  
+  /* Transform hamburger to X when open */
+  .menu-open .hamburger .bar:nth-child(1){ 
+    transform: translateY(5px) rotate(45deg); 
+  }
+  .menu-open .hamburger .bar:nth-child(2){ 
+    opacity:0; 
+  }
+  .menu-open .hamburger .bar:nth-child(3){ 
+    transform: translateY(-5px) rotate(-45deg); 
+  }
+  
+  /* Hide "Say Hello" button on mobile */
+  .actions .btn.ghost{ display: none; }
+  
+  /* Adjust nav links for mobile */
+  .nav-menu li{ 
+    list-style: none;
+    margin-bottom: 8px;
+  }
+  
+  .nav-menu a{
+    display: block;
+    padding: 12px 8px;
+    font-size: 16px;
+    line-height: 1.3;
+  }
 }
 
 /* ==============================================================
@@ -264,6 +341,7 @@ footer{ color:var(--muted); padding:34px 0 48px; text-align:center; }
 .avail-link:hover{ transform: translateY(-2px); background: linear-gradient(135deg, var(--brand-2), var(--brand)); }
 
 .contact-btn{
+  margin-top: 12px;
   display:inline-flex; align-items:center; gap:6px;
   padding:8px 16px; border-radius:999px;
   border:1px solid color-mix(in oklab, var(--cta2-end) 30%, transparent);
@@ -370,9 +448,7 @@ footer{ color:var(--muted); padding:34px 0 48px; text-align:center; }
 }
 .pill:focus-visible{ outline:2px solid var(--ring); outline-offset:2px; }
 
-
-
-/* Optional “always purple” variant if you use it anywhere */
+/* Optional "always purple" variant if you use it anywhere */
 .pill-brand{
   background:var(--brand); color:#fff; border-color:transparent;
   box-shadow:0 4px 12px rgba(124,92,255,.25);
@@ -418,8 +494,7 @@ footer{ color:var(--muted); padding:34px 0 48px; text-align:center; }
   text-underline-offset: 3px;
 }
 
-
-/* Card shell mirrors .project-card/.entry-card */
+/* Blog post cards */
 .post-card{
   display:flex; flex-direction:column; overflow:hidden; padding:0; height:100%;
   border:1px solid color-mix(in oklab, var(--text) 14%, transparent);
@@ -427,11 +502,6 @@ footer{ color:var(--muted); padding:34px 0 48px; text-align:center; }
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 .post-card:hover{ transform:none; box-shadow:none; border-color:color-mix(in oklab, var(--text) 14%, transparent); }
-
-.post-thumb{
-  width:100%; aspect-ratio:16/9; object-fit:cover; object-position:center;
-  display:block; border-bottom:1px solid color-mix(in oklab, var(--text) 12%, transparent);
-}
 
 .post-body{ display:flex; flex-direction:column; gap:8px; padding:14px; flex:1; }
 .post-title{ margin:0; font-size:16px; font-weight:800; line-height:1.35; }
@@ -454,36 +524,15 @@ footer{ color:var(--muted); padding:34px 0 48px; text-align:center; }
   gap:8px;
 }
 
-/* Read page typography if you add blog detail pages */
-.prose{ max-width:72ch; }
-.prose h1,.prose h2,.prose h3{ color:var(--h2); line-height:1.2; margin:1.2em 0 .4em; }
-.prose p{ color:var(--text); margin:.75em 0; }
-.prose a{ color: color-mix(in oklab, var(--brand) 80%, var(--text)); text-decoration: underline; text-underline-offset:3px; }
-.prose code{ font-family: ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.95em; background: color-mix(in oklab, var(--text) 8%, transparent); padding:.1em .35em; border-radius:6px; }
-.prose pre{ background: color-mix(in oklab, var(--text) 10%, transparent); padding:14px; border-radius:12px; overflow:auto; }
-.prose blockquote{ border-left:3px solid color-mix(in oklab, var(--brand) 65%, var(--text)); margin:1em 0; padding:.6em 1em; color:var(--muted); font-style:italic; }
-
 /* BLOG: grid fix + show only first 4 cards on homepage */
 #blog .grid { align-items: stretch; }
 
 /* Hide everything after the 4th card */
 #blog .grid > .post-card:nth-child(n+5) { display: none; }
 
-/* (Optional) If you want only 3 visible, switch to n+4) */
-
-/* already in your CSS */
-.hover-scope.hover-enabled .pill:hover {
-  background: var(--brand);
-  color: #fff;
-  border-color: transparent;
-  transform: scale(1.04);
-  box-shadow: 0 6px 16px rgba(124,92,255,.35);
-}
-
-
 /* Spacing before "See more on Medium" button */
 .blog-more {
-  margin-top: 28px;   /* adjust 24–32px based on your taste */
+  margin-top: 28px;
   display: flex;
   justify-content: center;
 }
@@ -494,23 +543,6 @@ footer{ color:var(--muted); padding:34px 0 48px; text-align:center; }
   text-align: center;
 }
 
-/* Constrain and center the form */
-#contact form {
-  max-width: 640px;           /* tweak: 560–720px works well */
-  margin: 0 auto;             /* centers inside the container */
-}
-
-/* Make fields fill the available width cleanly */
-#contact input,
-#contact textarea {
-  width: 100%;
-}
-
-/* Keep the submit button visually centered (not full-width) */
-#contact form .btn {
-  justify-self: center;       /* since the form is display:grid in your CSS */
-}
-/* Optional: give the contact area a card look without changing HTML */
 #contact .container {
   display: grid;
   justify-items: center;
@@ -522,6 +554,8 @@ footer{ color:var(--muted); padding:34px 0 48px; text-align:center; }
 }
 
 #contact form {
+  max-width: 640px;
+  margin: 0 auto;
   background: var(--card);
   border: 1px solid color-mix(in oklab, var(--text) 15%, transparent);
   border-radius: var(--radius);
@@ -529,4 +563,234 @@ footer{ color:var(--muted); padding:34px 0 48px; text-align:center; }
   box-shadow: var(--shadow);
 }
 
+#contact input,
+#contact textarea {
+  width: 100%;
+}
+
+/* Ensure the submit button uses BRAND (purple) gradient */
+#contact form .btn {
+  justify-self: center;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2)) !important;
+  border: 1px solid transparent;
+  color: #fff;
+}
+#contact form .btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--brand-2), var(--brand)) !important;
+}
+
+/* ==============================================================
+   FOOTER
+   ============================================================== */
+.site-footer {
+  padding: 32px 0;
+  background: var(--bg-soft);
+  color: var(--muted);
+  border-top: 1px solid color-mix(in oklab, var(--text) 15%, transparent);
+}
+
+.foot-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+/* Social icons (left) */
+.foot-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--text) 10%, transparent);
+  border: 1px solid color-mix(in oklab, var(--text) 20%, transparent);
+  font-size: 16px;
+  color: var(--muted);
+  margin-right: 6px;
+  transition: background .25s ease, color .25s ease,
+              transform .2s ease, border-color .25s ease;
+}
+.foot-socials a:hover { transform: translateY(-2px); }
+.foot-socials a[data-brand="linkedin"]:hover { background:#0A66C2; border-color:#0A66C2; color:#fff; }
+.foot-socials a[data-brand="github"]:hover   { background:#181717; border-color:#181717; color:#fff; }
+.foot-socials a[data-brand="medium"]:hover   { background:#000;    border-color:#000;    color:#fff; }
+.foot-socials a[data-brand="twitter"]:hover  { background:#000;    border-color:#000;    color:#fff; }
+.foot-socials a[data-brand="orcid"]:hover    { background:#A6CE39; border-color:#A6CE39; color:#0b0c10; }
+
+/* Center name */
+.foot-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Resume button (right) */
+.resume-btn {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: #fff !important;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  transition: transform .2s ease, background .3s ease;
+}
+.resume-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--brand-2), var(--brand));
+}
+
+/* Stack footer nicely on phones */
+@media (max-width: 640px){
+  .foot-flex{
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
+    justify-items:center; gap:12px; text-align:center;
+  }
+  .foot-cta{ width:100%; }
+  .foot-cta .resume-btn{ width:100%; max-width:520px; }
+}
+
+/* Typographic safety on tiny screens */
+@media (max-width:420px){
+  .site-title{ font-size:16px; }
+  .tagline{ font-size:13px; }
+  .kicker{ font-size:11px; }
+}
+
+/* Grid tweak: ensure min width works on very small devices */
+@media (max-width:340px){
+  .grid{ grid-template-columns: 1fr; }
+}
+
+/* Ensure long URLs/strings wrap gracefully */
+.meta, .post-excerpt, .subtitle, .prose { overflow-wrap:anywhere; word-break: break-word; }
+
+/* Prevent body scroll when menu is open */
+.menu-open { overflow: hidden; }
+
+/* ===== Hero skills spacing */
+.skills-row { margin-bottom: 16px; }
+@media (max-width: 640px){ .skills-row { margin-bottom: 20px; } }
+
+/* ===== Ensure hamburger shows on small screens and sits on the right (.actions) */
+.hamburger{ visibility: visible; opacity: 1; } /* safety */
+@media (max-width: 1024px){
+  .hamburger{
+    display: flex !important;
+    flex-direction: column; justify-content: center; gap: 5px;
+    width: 36px; height: 32px; border: 0; background: transparent; cursor: pointer;
+    z-index: 100;
+  }
+  .hamburger .bar{ height:2px; width:22px; background: var(--text); border-radius:2px; }
+
+  /* Slide-down panel */
+  .nav-menu{
+    position: fixed; left: 0; right: 0; top: var(--headerH, 64px);
+    display: flex; flex-direction: column; gap: 12px;
+    background: var(--bg-soft);
+    padding: 16px 20px 20px;
+    border-bottom: 1px solid color-mix(in oklab, var(--text) 15%, transparent);
+    transform: translateY(-120%); transition: transform .28s ease;
+    z-index: 99;
+  }
+  body.menu-open .nav-menu{ transform: translateY(0); }
+
+  /* morph hamburger into X */
+  body.menu-open .hamburger .bar:nth-child(1){ transform: translateY(5px) rotate(45deg); }
+  body.menu-open .hamburger .bar:nth-child(2){ opacity: 0; }
+  body.menu-open .hamburger .bar:nth-child(3){ transform: translateY(-5px) rotate(-45deg); }
+
+  /* keep header compact */
+  .actions .btn.ghost{ display: none; }
+
+  /* comfy tap targets */
+  .nav-menu li{ list-style: none; margin-bottom: 6px; }
+  .nav-menu a{ display:block; padding:12px 8px; font-size:16px; line-height:1.3; }
+}
+
+/* ===== Footer mobile fix */
+.site-footer{
+  padding-block: 18px;
+  background: var(--bg-soft);
+  border-top: 1px solid color-mix(in oklab, var(--text) 15%, transparent);
+  padding-bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+}
+.foot-flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.foot-socials{ display:inline-flex; gap:10px; }
+.foot-socials a{
+  display:inline-grid; place-items:center;
+  width:40px; height:40px; border-radius:12px;
+  border:1px solid color-mix(in oklab, var(--text) 12%, transparent);
+  background: color-mix(in oklab, var(--text) 5%, transparent);
+}
+.foot-name{ text-align:center; font-size:14px; opacity:.9; }
+.foot-cta{ display:flex; justify-content:flex-end; }
+.foot-cta .resume-btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:180px; height:40px; padding:0 14px; border-radius:12px;
+  border:1px solid color-mix(in oklab, var(--text) 15%, transparent);
+  text-decoration:none;
+}
+
+/* stack + full-width CTA on phones */
+@media (max-width: 640px){
+  .foot-flex{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
+    justify-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+  .foot-socials{ order: 1; }
+  .foot-name{ order: 2; }
+  .foot-cta{ order: 3; width: 100%; }
+  .foot-cta .resume-btn{ width: 100%; max-width: 520px; }
+}
+
+/* Theme toggle button */
+.toggle{
+  display:inline-grid; place-items:center;
+  width:36px; height:36px; border-radius:12px; cursor:pointer;
+  border:1px solid color-mix(in oklab, var(--text) 15%, transparent);
+  background: color-mix(in oklab, var(--text) 6%, transparent);
+  transition: transform .2s ease, background .25s ease, border-color .25s ease;
+}
+.toggle:hover{ transform: translateY(-1px); background: color-mix(in oklab, var(--text) 12%, transparent); }
+.toggle:focus-visible{ outline:2px solid var(--ring); outline-offset:3px; }
+
+@media (max-width:1024px){
+  /* keep toggle visible on small screens */
+  .toggle{ display:inline-grid; }
+  /* we only hide the big CTA, not the toggle */
+  .actions .btn.ghost{ display:none; }
+}
+/* Base pill hover (always visible) */
+.pill:hover{
+  transform: translateY(-1px);
+  border-color: color-mix(in oklab, var(--brand) 40%, var(--text));
+  box-shadow: 0 6px 16px rgba(0,0,0,.12);
+}
+
+/* Strong, brand-colored hover when the section is in view (your hover-gating) */
+#projects.hover-enabled .pill:hover,
+.hover-scope.hover-enabled .pill:hover{
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color:#fff;
+  border-color: transparent;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,.18);
+}
 

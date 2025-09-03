@@ -1,5 +1,3 @@
-
-
 /* ---------- Utilities ---------- */
 const $    = (sel, root = document) => root.querySelector(sel);
 const $$   = (sel, root = document) => Array.from(root.querySelectorAll(sel));
@@ -21,10 +19,12 @@ const prefersReducedMotion = () =>
     root.classList.add("light");
   }
 
-  on(toggle, "click", () => {
-    const isLight = root.classList.toggle("light");
-    localStorage.setItem("theme", isLight ? "light" : "dark");
-  });
+  if (toggle) {
+    on(toggle, "click", () => {
+      const isLight = root.classList.toggle("light");
+      localStorage.setItem("theme", isLight ? "light" : "dark");
+    });
+  }
 })();
 
 /* ---------- Footer year ---------- */
@@ -55,18 +55,6 @@ const prefersReducedMotion = () =>
   }, { rootMargin: "-50px 0px -20% 0px", threshold: 0.01 });
 
   targets.forEach(el => io.observe(el));
-})();
-
-/* ---------- Publications: show DOI inline if present ---------- */
-(() => {
-  const doiLink    = $(".doi");
-  const doiDisplay = $("#doiDisplay");
-  if (!doiLink || !doiDisplay) return;
-
-  const doi = doiLink.getAttribute("data-doi");
-  if (doi && !/xxxx/i.test(doi)) {
-    doiDisplay.textContent = `(DOI: ${doi})`;
-  }
 })();
 
 /* ---------- Nav: set aria-current on active section link ---------- */
@@ -139,5 +127,50 @@ const prefersReducedMotion = () =>
     if (location.hash === "" || location.hash === "#top") {
       scopes.forEach(sec => sec.classList.remove("hover-enabled"));
     }
+  });
+})();
+
+/* ---------- Mobile menu toggle (hamburger) ---------- */
+(() => {
+  const btn   = document.getElementById("menuToggle");
+  const nav   = document.getElementById("primaryNav");
+  const root  = document.documentElement;
+  const hdr   = document.querySelector("header");
+  if (!btn || !nav || !hdr) return;
+
+  const setHeaderH = () => {
+    const h = hdr.offsetHeight || 64;
+    root.style.setProperty("--headerH", `${h}px`);
+  };
+  setHeaderH();
+  window.addEventListener("resize", setHeaderH, { passive: true });
+
+  const open = () => {
+    document.body.classList.add("menu-open");
+    btn.setAttribute("aria-expanded", "true");
+  };
+  const close = () => {
+    document.body.classList.remove("menu-open");
+    btn.setAttribute("aria-expanded", "false");
+  };
+  const toggle = () => {
+    if (document.body.classList.contains("menu-open")) close();
+    else open();
+  };
+
+  btn.addEventListener("click", toggle);
+  // Close when clicking a link inside the nav
+  nav.addEventListener("click", (e) => {
+    const a = e.target.closest("a");
+    if (a) close();
+  });
+  // Close on Escape, or when clicking outside
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
+  document.addEventListener("click", (e) => {
+    if (!document.body.classList.contains("menu-open")) return;
+    if (e.target.closest("header")) return; // clicks within header are fine
+    close();
   });
 })();
