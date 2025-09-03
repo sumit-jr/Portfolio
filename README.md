@@ -21,7 +21,6 @@ Highlights: intrusion detection with XGBoost, virtual try-on, and an IoT vitals 
 ---
 
 ## Screenshots
-> Replace with your own images if desired.
 
 ![Open Graph preview](assets/home-desktop.png)
 
