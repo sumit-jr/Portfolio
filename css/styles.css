@@ -423,6 +423,17 @@ nav a:focus-visible {
   color: #000000;
 }
 
+.chip.social[data-brand="tryhackme"] i {
+  color: #1DB954;
+  /* TryHackMe green */
+}
+
+.chip.social[data-brand="tryhackme"]:hover {
+  background: #1DB954;
+  border-color: #1DB954;
+  color: #fff;
+}
+
 .chip.social[data-brand="twitter"] i {
   color: #000000;
 }
