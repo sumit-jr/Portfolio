@@ -492,6 +492,127 @@ nav a:focus-visible {
 }
 
 /* ==============================================================
+   WORK EXPERIENCE
+   ============================================================== */
+.experience-card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid color-mix(in oklab, var(--text) 14%, transparent);
+  border-radius: var(--radius);
+  background: var(--card);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  height: 100%;
+}
+
+.experience-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .24);
+  border-color: color-mix(in oklab, var(--brand) 30%, transparent);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.experience-title h3 {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.company {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.experience-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  text-align: right;
+}
+
+.date {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.location {
+  font-size: 12px;
+  color: var(--muted);
+  background: color-mix(in oklab, var(--brand) 15%, transparent);
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.experience-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-list {
+  margin: 0 0 16px 0;
+  padding-left: 18px;
+  flex: 1;
+}
+
+.experience-list li {
+  margin-bottom: 8px;
+  color: var(--muted);
+  line-height: 1.5;
+  position: relative;
+}
+
+.experience-list li::marker {
+  color: var(--brand);
+}
+
+.experience-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+/* Mobile responsiveness for experience header */
+@media (max-width: 640px) {
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .experience-meta {
+    align-items: flex-start;
+    text-align: left;
+    flex-direction: row;
+    gap: 12px;
+  }
+  
+  .experience-list {
+    padding-left: 16px;
+  }
+}
+
+/* Ensure grid works well with experience cards */
+#experience .grid {
+  align-items: stretch;
+}
+
+/* ==============================================================
    CONTENT & UTIL
    ============================================================== */
 .grid {
@@ -1516,3 +1637,4 @@ footer {
     -webkit-tap-highlight-color: transparent;
   }
 }
+
