@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sumit Prasad Sah – Portfolio</title>
-  <meta name="description" content="AI & Cybersecurity Researcher | IEEE Author & Patent Holder. Projects in virtual try-on, intrusion detection, IoT health monitoring, and more." />
+  <meta name="description"
+    content="AI & Cybersecurity Researcher | IEEE Author & Patent Holder. Projects in virtual try-on, intrusion detection, IoT health monitoring, and more." />
 
-<!-- Prevent light→dark flash for users who picked light -->
+  <!-- Prevent light→dark flash for users who picked light -->
   <script>
-    try{
-      if(localStorage.getItem('theme')==='light'){
+    try {
+      if (localStorage.getItem('theme') === 'light') {
         document.documentElement.classList.add('light');
       }
-    }catch(e){}
+    } catch (e) { }
   </script>
 
   <link rel="canonical" href="https://sumit-jr.github.io/Portfolio/" />
@@ -43,11 +45,8 @@
   <link rel="manifest" href="site.webmanifest">
 
   <!-- Font Awesome (CDN) with SRI -->
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  referrerpolicy="no-referrer"
-/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    referrerpolicy="no-referrer" />
 
 
   <!-- Schema.org Person -->
@@ -70,49 +69,52 @@
   }
   </script>
 </head>
+
 <body>
   <a href="#main" class="sr-only">Skip to content</a>
 
   <!-- NAVBAR -->
   <header class="site-header">
-  <div class="nav-container container">
-    <div class="site-branding">
-      <img src="assets/logo.png" alt="Sumit Sah Logo" class="logo" width="112" height="28" loading="eager" decoding="async" />
-      <a href="index.html" class="site-title">Sumit Sah</a>
+    <div class="nav-container container">
+      <div class="site-branding">
+        <img src="assets/logo.png" alt="Sumit Sah Logo" class="logo" width="112" height="28" loading="eager"
+          decoding="async" />
+        <a href="index.html" class="site-title">Sumit Sah</a>
+      </div>
+
+      <nav aria-label="Primary">
+        <ul id="primaryNav" class="nav-menu">
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#works">Publications</a></li>
+          <li><a href="#certs">Certs & Badges</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a class="resume-link"
+              href="https://drive.google.com/file/d/1PKXmP5zoaHBZysdhuRuYv9c9yLVDsiVt/view?usp=sharing" target="_blank"
+              rel="noopener noreferrer">Resume</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="actions">
+        <!-- Light/Dark toggle (works with your existing JS) -->
+        <button id="themeToggle" class="toggle" aria-label="Toggle light/dark">🌓</button>
+
+        <!-- Hamburger on the RIGHT -->
+        <button id="menuToggle" class="hamburger" aria-label="Open menu" aria-controls="primaryNav"
+          aria-expanded="false">
+          <span class="bar" aria-hidden="true"></span>
+          <span class="bar" aria-hidden="true"></span>
+          <span class="bar" aria-hidden="true"></span>
+        </button>
+
+        <!-- Keep or remove this as you wish -->
+        <a class="btn ghost" href="#contact">Say Hello 👋</a>
+      </div>
     </div>
-
-    <nav aria-label="Primary">
-      <ul id="primaryNav" class="nav-menu">
-            <li><a href="#experience">Experience</a></li> 
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#works">Publications</a></li>
-        <li><a href="#certs">Certs & Badges</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li>
-          <a class="resume-link"
-             href="https://drive.google.com/file/d/1PKXmP5zoaHBZysdhuRuYv9c9yLVDsiVt/view?usp=sharing"
-             target="_blank" rel="noopener noreferrer">Resume</a>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="actions">
-      <!-- Light/Dark toggle (works with your existing JS) -->
-  <button id="themeToggle" class="toggle" aria-label="Toggle light/dark">🌓</button>
-
-      <!-- Hamburger on the RIGHT -->
-      <button id="menuToggle" class="hamburger" aria-label="Open menu" aria-controls="primaryNav" aria-expanded="false">
-        <span class="bar" aria-hidden="true"></span>
-        <span class="bar" aria-hidden="true"></span>
-        <span class="bar" aria-hidden="true"></span>
-      </button>
-
-      <!-- Keep or remove this as you wish -->
-      <a class="btn ghost" href="#contact">Say Hello 👋</a>
-    </div>
-  </div>
-</header>
+  </header>
 
 
   <main id="main">
@@ -121,8 +123,8 @@
       <div class="container two-col">
         <div class="card">
           <div class="profile">
-            <img src="assets/profile.jpg" alt="Portrait of Sumit Prasad Sah" class="profile-pic"
-                 width="256" height="256" fetchpriority="high" loading="eager" decoding="async"/>
+            <img src="assets/profile.jpg" alt="Portrait of Sumit Prasad Sah" class="profile-pic" width="256"
+              height="256" fetchpriority="high" loading="eager" decoding="async" />
             <h1 class="name">Sumit Sah</h1>
           </div>
 
@@ -130,15 +132,18 @@
           <p class="tagline">Cybersecurity & AI Researcher | IEEE Author | Patent Holder</p>
 
           <p class="subtitle">
-            Building ML-powered security systems for intrusion detection, IoT protection, and enterprise defense. Published IEEE researcher and patent holder bridging theoretical AI advancements with practical cybersecurity implementations.
+            Building ML-powered security systems for intrusion detection, IoT protection, and enterprise defense.
+            Published IEEE researcher and patent holder bridging theoretical AI advancements with practical
+            cybersecurity implementations.
           </p>
 
           <div class="row skills-row">
             <span class="chip skill">Python</span>
-            <span class="chip skill">XGBoost</span>
-            <span class="chip skill">TensorFlow</span>
+            <span class="chip skill">Burp Suite</span>
+            <span class="chip skill">Nmap</span>
             <span class="chip skill">Linux</span>
             <span class="chip skill">Wireshark</span>
+            <span class="chip skill">gobuster</span>
             <span class="chip skill">AWS</span>
             <span class="chip skill">Docker</span>
           </div>
@@ -162,602 +167,618 @@
             <a class="contact-btn" href="mailto:er.sumitsah@gmail.com">Contact →</a>
           </p>
 
-        <div class="socials" aria-label="Social profiles">
-  <a class="chip social" data-brand="linkedin" href="https://www.linkedin.com/in/sumit-prasad-sah/" target="_blank" rel="noopener noreferrer">
-    <i class="fa-brands fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span>
-  </a>
-  <a class="chip social" data-brand="github" href="https://github.com/Sumit-jr" target="_blank" rel="noopener noreferrer">
-    <i class="fa-brands fa-github" aria-hidden="true"></i> <span>GitHub</span>
-  </a>
-  <a class="chip social" data-brand="medium" href="https://medium.com/@er.sumitsah" target="_blank" rel="noopener noreferrer">
-    <i class="fa-brands fa-medium" aria-hidden="true"></i> <span>Medium</span>
-  </a>
-  <a class="chip social" data-brand="tryhackme" href="https://tryhackme.com/p/er.sumitsah" target="_blank" rel="noopener noreferrer">
-    <i class="fa-solid fa-shield-halved" aria-hidden="true"></i> <span>TryHackMe</span>
-  </a>
-  <a class="chip social" data-brand="twitter" href="https://twitter.com/sumitsah_jr" target="_blank" rel="noopener noreferrer">
-    <i class="fa-brands fa-x-twitter" aria-hidden="true"></i> <span>Twitter</span>
-  </a>
-  <a class="chip social" data-brand="orcid" href="https://orcid.org/0009-0001-8084-7935" target="_blank" rel="noopener noreferrer">
-    <i class="fa-brands fa-orcid" aria-hidden="true"></i> <span>ORCID</span>
-  </a>
-  
-</div>
+          <div class="socials" aria-label="Social profiles">
+            <a class="chip social" data-brand="linkedin" href="https://www.linkedin.com/in/sumit-prasad-sah/"
+              target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span>
+            </a>
+            <a class="chip social" data-brand="github" href="https://github.com/Sumit-jr" target="_blank"
+              rel="noopener noreferrer">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> <span>GitHub</span>
+            </a>
+            <a class="chip social" data-brand="medium" href="https://medium.com/@er.sumitsah" target="_blank"
+              rel="noopener noreferrer">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> <span>Medium</span>
+            </a>
+            <a class="chip social" data-brand="tryhackme" href="https://tryhackme.com/p/er.sumitsah" target="_blank"
+              rel="noopener noreferrer">
+              <i class="fa-solid fa-shield-halved" aria-hidden="true"></i> <span>TryHackMe</span>
+            </a>
+            <a class="chip social" data-brand="twitter" href="https://twitter.com/sumitsah_jr" target="_blank"
+              rel="noopener noreferrer">
+              <i class="fa-brands fa-x-twitter" aria-hidden="true"></i> <span>Twitter</span>
+            </a>
+            <a class="chip social" data-brand="orcid" href="https://orcid.org/0009-0001-8084-7935" target="_blank"
+              rel="noopener noreferrer">
+              <i class="fa-brands fa-orcid" aria-hidden="true"></i> <span>ORCID</span>
+            </a>
+
+          </div>
 
         </div>
       </div>
     </section>
 
     <!-- WORK EXPERIENCE -->
-<section id="experience" class="section hover-scope">
-  <div class="container">
-    <h2>Work Experience</h2>
-    <p class="lead">Professional roles applying theoretical knowledge to real-world systems and infrastructure.</p>
+    <section id="experience" class="section hover-scope">
+      <div class="container">
+        <h2>Work Experience</h2>
+        <p class="lead">Professional roles applying theoretical knowledge to real-world systems and infrastructure.</p>
 
-    <div class="grid">
+        <div class="grid">
 
-      <!-- Janki Cables -->
-      <article class="card experience-card">
-        <div class="experience-header">
-          <div class="experience-title">
-            <h3>Network Administrator</h3>
-            <p class="company">Janki Cables</p>
-          </div>
-          <div class="experience-meta">
-            <span class="date">Apr 2025 – Present</span>
-            <span class="location">Full-time</span>
-          </div>
-        </div>
-        <div class="experience-body">
-          <ul class="experience-list">
-            <li>Applied theoretical networking concepts (TCP/IP, routing algorithms) to optimize enterprise infrastructure</li>
-            <li>Designed and implemented network architectures serving 500+ clients with 99.9% uptime</li>
-            <li>Developed analytical models for bandwidth optimization and traffic analysis</li>
-          </ul>
-          <div class="experience-skills">
-            <span class="pill">TCP/IP</span>
-            <span class="pill">Network Architecture</span>
-            <span class="pill">Infrastructure</span>
-            <span class="pill">Traffic Analysis</span>
-          </div>
-        </div>
-      </article>
+          <!-- Janki Cables -->
+          <article class="card experience-card">
+            <div class="experience-header">
+              <div class="experience-title">
+                <h3>Junior Network Engineer</h3>
+                <p class="company">Janki Cables</p>
+              </div>
+              <div class="experience-meta">
+                <span class="date">Apr 2025 – Present</span>
+                <span class="location">Full-time</span>
+              </div>
+            </div>
+            <div class="experience-body">
+              <ul class="experience-list">
+                <li>Monitor and maintain network infrastructure, ensuring high availability and reliability for 500+
+                  office clients.</li>
+                <li>Troubleshoot and resolve network issues, including client connectivity, printer configurations, and
+                  performance bottlenecks.</li>
+                <li>Analyze network traffic using monitoring tools to support capacity planning and optimize bandwidth
+                  utilization.</li>
+              </ul>
+              <div class="experience-skills">
+                <span class="pill">TCP/IP</span>
+                <span class="pill">Network Architecture</span>
+                <span class="pill">Infrastructure</span>
+                <span class="pill">Traffic Analysis</span>
+              </div>
+            </div>
+          </article>
 
-      <!-- Bajra Technologies -->
-      <article class="card experience-card">
-        <div class="experience-header">
-          <div class="experience-title">
-            <h3>Trainee – Ruby on Rails</h3>
-            <p class="company">Bajra Technologies</p>
-          </div>
-          <div class="experience-meta">
-            <span class="date">Nov 2024 – Feb 2025</span>
-            <span class="location">Internship</span>
-          </div>
-        </div>
-        <div class="experience-body">
-          <ul class="experience-list">
-            <li>Implemented distributed system components for scalable streaming platform</li>
-            <li>Applied software engineering principles (OOP, design patterns) in production environment</li>
-            <li>Optimized database algorithms reducing query time by 40% through indexing strategies</li>
-          </ul>
-          <div class="experience-skills">
-            <span class="pill">Ruby on Rails</span>
-            <span class="pill">Distributed Systems</span>
-            <span class="pill">Database Optimization</span>
-            <span class="pill">OOP</span>
-          </div>
-        </div>
-      </article>
+          <!-- Bajra Technologies -->
+          <article class="card experience-card">
+            <div class="experience-header">
+              <div class="experience-title">
+                <h3>Trainee – Ruby on Rails</h3>
+                <p class="company">Bajra Technologies</p>
+              </div>
+              <div class="experience-meta">
+                <span class="date">Nov 2024 – Feb 2025</span>
+                <span class="location">Internship</span>
+              </div>
+            </div>
+            <div class="experience-body">
+              <ul class="experience-list">
+                <li>Implemented distributed system components for scalable streaming platform</li>
+                <li>Applied software engineering principles (OOP, design patterns) in production environment</li>
+                <li>Optimized database algorithms reducing query time by 40% through indexing strategies</li>
+              </ul>
+              <div class="experience-skills">
+                <span class="pill">Ruby on Rails</span>
+                <span class="pill">Distributed Systems</span>
+                <span class="pill">Database Optimization</span>
+                <span class="pill">OOP</span>
+              </div>
+            </div>
+          </article>
 
-    </div>
-  </div>
-</section>
+        </div>
+      </div>
+    </section>
 
     <!-- PROJECTS -->
-<section id="projects" class="section hover-scope">
-  <div class="container">
-    <h2>Research & Projects</h2>
-    <p class="lead">Applied research in cybersecurity, reinforced with AI and full-stack engineering.</p>
+    <section id="projects" class="section hover-scope">
+      <div class="container">
+        <h2>Research & Projects</h2>
+        <p class="lead">Applied research in cybersecurity, reinforced with AI and full-stack engineering.</p>
 
 
-    <div class="grid">
+        <div class="grid">
 
-      <!-- Project 2: Research – Paper -->
-<article class="card project-card">
-  <img class="project-thumb"
-       src="assets/Projects/intrusion-detection.png"
-       alt="Intrusion Detection XGBoost IDS"
-       width="960" height="540" loading="lazy" decoding="async" />
-  <div class="project-body">
-    <h3>Network Intrusion Detection (XGBoost)</h3>
-    <p class="meta">Python · ML · UNSW-NB15 dataset</p>
-    <p>Precision-oriented IDS with tuned XGBoost and threshold calibration to cut false positives while keeping recall.</p>
-    <div class="row">
-      <span class="pill">XGBoost</span>
-      <span class="pill">AUC/PR</span>
-      <span class="pill">Threshold Tuning</span>
-    </div>
-    <div class="cta-row">
-      <a class="btn code-btn" href="https://github.com/Sumit-jr/Optimizing-XGBoost-Hyperparameters-for-Network-Intrusion-Detection"
-         target="_blank" rel="noopener noreferrer">Code →</a>
-    </div>
-  </div>
-</article>
+          <!-- Project 2: Research – Paper -->
+          <article class="card project-card">
+            <img class="project-thumb" src="assets/Projects/intrusion-detection.png"
+              alt="Intrusion Detection XGBoost IDS" width="960" height="540" loading="lazy" decoding="async" />
+            <div class="project-body">
+              <h3>Network Intrusion Detection (XGBoost)</h3>
+              <p class="meta">Python · ML · UNSW-NB15 dataset</p>
+              <p>Precision-oriented IDS with tuned XGBoost and threshold calibration to cut false positives while
+                keeping recall.</p>
+              <div class="row">
+                <span class="pill">XGBoost</span>
+                <span class="pill">AUC/PR</span>
+                <span class="pill">Threshold Tuning</span>
+              </div>
+              <div class="cta-row">
+                <a class="btn code-btn"
+                  href="https://github.com/Sumit-jr/Optimizing-XGBoost-Hyperparameters-for-Network-Intrusion-Detection"
+                  target="_blank" rel="noopener noreferrer">Code →</a>
+              </div>
+            </div>
+          </article>
 
-  <!-- Project 2: Patent -->
-<article class="card project-card">
-  <img class="project-thumb"
-       src="assets/Projects/healthguard.png"
-       alt="HealthGuard IoT Vitals Monitoring System"
-       width="960" height="540" loading="lazy" decoding="async" />
-  <div class="project-body">
-    <h3>HealthGuard (IoT Vitals Monitoring)</h3>
-    <p class="meta">IoT · Arduino · Sensors · Cloud</p>
-    <p>Real-time vitals (HR, temp, SpO₂) with secure data path and alerts. Granted under Indian IP.</p>
-    <div class="row">
-      <span class="pill">Edge → Cloud</span>
-      <span class="pill">Privacy</span>
-      <span class="pill">Dashboards</span>
-    </div>
-    <div class="cta-row">
-      <a class="btn code-btn" href="https://github.com/sumit-jr/HealthGuard-IoT-Based-Health-Monitoring-System"
-         target="_blank" rel="noopener noreferrer">Code →</a>
-    </div>
-  </div>
-</article>
-
-
-
-      <!-- Project 3 -->
-<!-- Project 3: Research – Major -->
-<article class="card project-card">
-  <img class="project-thumb"
-       src="assets/Projects/virtual-tryon.png"
-       alt="Virtual Clothes Try-On pipeline result preview"
-       width="960" height="540" loading="lazy" decoding="async" />
-  <div class="project-body">
-    <h3>Virtual Clothes Try-On</h3>
-    <p class="meta">Python · OpenCV · GMM · DL (OpenPose, U2-Net, ResNet-101) · VITON dataset</p>
-    <p>2D image-based VITON: segment person + garment and warp clothing with geometric matching—no 3D meshes required.</p>
-    <div class="row">
-      <span class="pill">Segmentation</span>
-      <span class="pill">Pose Estimation</span>
-      <span class="pill">Warping</span>
-    </div>
-    <div class="cta-row">
-      <a class="btn code-btn" href="https://github.com/sumit-jr/clothes_virtual_try_on"
-         target="_blank" rel="noopener noreferrer">Code →</a>
-    </div>
-  </div>
-</article>
+          <!-- Project 2: Patent -->
+          <article class="card project-card">
+            <img class="project-thumb" src="assets/Projects/healthguard.png"
+              alt="HealthGuard IoT Vitals Monitoring System" width="960" height="540" loading="lazy" decoding="async" />
+            <div class="project-body">
+              <h3>HealthGuard (IoT Vitals Monitoring)</h3>
+              <p class="meta">IoT · Arduino · Sensors · Cloud</p>
+              <p>Real-time vitals (HR, temp, SpO₂) with secure data path and alerts. Granted under Indian IP.</p>
+              <div class="row">
+                <span class="pill">Edge → Cloud</span>
+                <span class="pill">Privacy</span>
+                <span class="pill">Dashboards</span>
+              </div>
+              <div class="cta-row">
+                <a class="btn code-btn"
+                  href="https://github.com/sumit-jr/HealthGuard-IoT-Based-Health-Monitoring-System" target="_blank"
+                  rel="noopener noreferrer">Code →</a>
+              </div>
+            </div>
+          </article>
 
 
 
-
-<!-- Project 4: Internship -->
-<article class="card project-card">
-  <img class="project-thumb"
-       src="assets/Projects/movie-organiser.jpg"
-       alt="Movie Metadata Organiser Ruby on Rails App"
-       width="960" height="540" loading="lazy" decoding="async" />
-  <div class="project-body">
-    <h3>Movie Metadata Organiser — Ruby on Rails</h3>
-    <p class="meta">Rails · Devise · Stripe · Action Cable · Tailwind</p>
-    <p>Role-based platform with secure one-time payments, real-time notifications, and responsive UI.</p>
-    <div class="row">
-      <span class="pill">RBAC</span>
-      <span class="pill">Stripe</span>
-      <span class="pill">Realtime</span>
-    </div>
-    <div class="cta-row">
-      <a class="btn code-btn" href="https://github.com/sumit-jr/Movie-Metadata-Organiser"
-         target="_blank" rel="noopener noreferrer">Code →</a>
-    </div>
-  </div>
-</article>
-
-<!-- Project 5: Academic -->
-<article class="card project-card">
-  <img class="project-thumb"
-       src="assets/Projects/chicken-disease.png"
-       alt="Chicken Disease Detection CNN pipeline"
-       width="960" height="540" loading="lazy" decoding="async" />
-  <div class="project-body">
-    <h3>Chicken Disease Detection (CNN)</h3>
-    <p class="meta">Python · DL · AWS</p>
-    <p>Coccidiosis detection pipeline with CI/CD and cloud testing for throughput and reliability.</p>
-    <div class="row">
-      <span class="pill">Vision</span>
-      <span class="pill">MLOps</span>
-      <span class="pill">Deployment</span>
-    </div>
-    <div class="cta-row">
-      <a class="btn code-btn" href="https://github.com/sumit-jr/Chicken-Disease-Classification-Projects"
-         target="_blank" rel="noopener noreferrer">Code →</a>
-    </div>
-  </div>
-</article>
+          <!-- Project 3 -->
+          <!-- Project 3: Research – Major -->
+          <article class="card project-card">
+            <img class="project-thumb" src="assets/Projects/virtual-tryon.png"
+              alt="Virtual Clothes Try-On pipeline result preview" width="960" height="540" loading="lazy"
+              decoding="async" />
+            <div class="project-body">
+              <h3>Virtual Clothes Try-On</h3>
+              <p class="meta">Python · OpenCV · GMM · DL (OpenPose, U2-Net, ResNet-101) · VITON dataset</p>
+              <p>2D image-based VITON: segment person + garment and warp clothing with geometric matching—no 3D meshes
+                required.</p>
+              <div class="row">
+                <span class="pill">Segmentation</span>
+                <span class="pill">Pose Estimation</span>
+                <span class="pill">Warping</span>
+              </div>
+              <div class="cta-row">
+                <a class="btn code-btn" href="https://github.com/sumit-jr/clothes_virtual_try_on" target="_blank"
+                  rel="noopener noreferrer">Code →</a>
+              </div>
+            </div>
+          </article>
 
 
-    </div>
-  </div>
-</section>
 
-  <!-- PATENTS & PUBLICATIONS (merged) -->
-<section id="works" class="section hover-scope">
-  <div class="container">
-    <h2>Patents & Publications</h2>
-    <div class="grid">
 
-      <!-- Patent -->
-      <article class="card entry-card">
-        <img class="entry-thumb"
-             src="assets/Patents/healthguard-patent.jpg"
-             alt="HealthGuard IoT Patent cover"
-             width="960" height="540" loading="lazy" decoding="async" />
-        <div class="entry-body">
-          <h3>HealthGuard: IoT-Based Health Monitoring System</h3>
-          <p class="meta">
-            <strong>Patent No. 40/2024 </strong>  · <strong> Application No. 202441070524 A </strong>· Granted Oct 4, 2024 · India
-          </p>
-          <p>Low-cost vitals monitoring with secure data flow and alerting.</p>
-          <div class="row">
-            <span class="pill">IoT</span>
-            <span class="pill">Edge→Cloud</span>
-            <span class="pill">Security</span>
-          </div>
-          <div class="cta-row">
-            <a class="btn link-btn"
-               href="https://search.ipindia.gov.in/IPOJournal/Journal/ViewJournal"
-               target="_blank" rel="noopener noreferrer">View on IPO →</a>
-            <a class="btn ghost backup"
-               href="https://drive.google.com/file/d/1jUNlnrlmSjgdC0ZOrbZf-U8HTIDOiJw7/view?usp=sharing"
-               target="_blank" rel="noopener noreferrer">Backup (Drive) →</a>
-          </div>
+          <!-- Project 4: Internship -->
+          <article class="card project-card">
+            <img class="project-thumb" src="assets/Projects/movie-organiser.jpg"
+              alt="Movie Metadata Organiser Ruby on Rails App" width="960" height="540" loading="lazy"
+              decoding="async" />
+            <div class="project-body">
+              <h3>Movie Metadata Organiser — Ruby on Rails</h3>
+              <p class="meta">Rails · Devise · Stripe · Action Cable · Tailwind</p>
+              <p>Role-based platform with secure one-time payments, real-time notifications, and responsive UI.</p>
+              <div class="row">
+                <span class="pill">RBAC</span>
+                <span class="pill">Stripe</span>
+                <span class="pill">Realtime</span>
+              </div>
+              <div class="cta-row">
+                <a class="btn code-btn" href="https://github.com/sumit-jr/Movie-Metadata-Organiser" target="_blank"
+                  rel="noopener noreferrer">Code →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: Academic -->
+          <article class="card project-card">
+            <img class="project-thumb" src="assets/Projects/chicken-disease.png"
+              alt="Chicken Disease Detection CNN pipeline" width="960" height="540" loading="lazy" decoding="async" />
+            <div class="project-body">
+              <h3>Chicken Disease Detection (CNN)</h3>
+              <p class="meta">Python · DL · AWS</p>
+              <p>Coccidiosis detection pipeline with CI/CD and cloud testing for throughput and reliability.</p>
+              <div class="row">
+                <span class="pill">Vision</span>
+                <span class="pill">MLOps</span>
+                <span class="pill">Deployment</span>
+              </div>
+              <div class="cta-row">
+                <a class="btn code-btn" href="https://github.com/sumit-jr/Chicken-Disease-Classification-Projects"
+                  target="_blank" rel="noopener noreferrer">Code →</a>
+              </div>
+            </div>
+          </article>
+
+
         </div>
-      </article>
+      </div>
+    </section>
 
-      <!-- Publication 1 -->
-      <article class="card entry-card">
-        <img class="entry-thumb"
-             src="assets/Publications/vfr-paper.jpg"
-             alt="Virtual Fitting Rooms paper cover"
-             width="960" height="540" loading="lazy" decoding="async" />
-        <div class="entry-body">
-          <h3>Advancement in Virtual Fitting Rooms</h3>
-          <p class="meta">15th ICCCNT (IEEE), Nov 2024 · IEEE Xplore</p>
-          <!-- DOI (hard-coded & always visible) -->
-          <p class="refs meta">
-            <strong>DOI:</strong>
-            <a class="doi-link"
-               href="https://doi.org/10.1109/ICCCNT61001.2024.10724276"
-               target="_blank" rel="noopener noreferrer"
-               aria-label="Open DOI 10.1109/ICCCNT61001.2024.10724276">
-              10.1109/ICCCNT61001.2024.10724276
-            </a>
-          </p>
+    <!-- PATENTS & PUBLICATIONS (merged) -->
+    <section id="works" class="section hover-scope">
+      <div class="container">
+        <h2>Patents & Publications</h2>
+        <div class="grid">
 
-          <p>2D try-on stack (segmentation + pose + warping) with texture realism ablations.</p>
-          <div class="row">
-            <span class="pill">Computer Vision</span>
-            <span class="pill">Segmentation</span>
-            <span class="pill">Pose</span>
-          </div>
-          <div class="cta-row">
-            <a class="btn link-btn doi"
-               data-doi="10.1109/ICCCNT61001.2024.10724276"
-               href="https://ieeexplore.ieee.org/document/10724276"
-               target="_blank" rel="noopener noreferrer">IEEE Xplore →</a>
-            <a class="btn ghost backup"
-               href="https://drive.google.com/file/d/1otgsUfyvUCnLaW6yQAyRShDIu6QHolgv/view?usp=sharing"
-               target="_blank" rel="noopener noreferrer">Backup (Drive) →</a>
-          </div>
+          <!-- Patent -->
+          <article class="card entry-card">
+            <img class="entry-thumb" src="assets/Patents/healthguard-patent.jpg" alt="HealthGuard IoT Patent cover"
+              width="960" height="540" loading="lazy" decoding="async" />
+            <div class="entry-body">
+              <h3>HealthGuard: IoT-Based Health Monitoring System</h3>
+              <p class="meta">
+                <strong>Patent No. 40/2024 </strong> · <strong> Application No. 202441070524 A </strong>· Granted Oct 4,
+                2024 · India
+              </p>
+              <p>Low-cost vitals monitoring with secure data flow and alerting.</p>
+              <div class="row">
+                <span class="pill">IoT</span>
+                <span class="pill">Edge→Cloud</span>
+                <span class="pill">Security</span>
+              </div>
+              <div class="cta-row">
+                <a class="btn link-btn" href="https://search.ipindia.gov.in/IPOJournal/Journal/ViewJournal"
+                  target="_blank" rel="noopener noreferrer">View on IPO →</a>
+                <a class="btn ghost backup"
+                  href="https://drive.google.com/file/d/1jUNlnrlmSjgdC0ZOrbZf-U8HTIDOiJw7/view?usp=sharing"
+                  target="_blank" rel="noopener noreferrer">Backup (Drive) →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Publication 1 -->
+          <article class="card entry-card">
+            <img class="entry-thumb" src="assets/Publications/vfr-paper.jpg" alt="Virtual Fitting Rooms paper cover"
+              width="960" height="540" loading="lazy" decoding="async" />
+            <div class="entry-body">
+              <h3>Advancement in Virtual Fitting Rooms</h3>
+              <p class="meta">15th ICCCNT (IEEE), Nov 2024 · IEEE Xplore</p>
+              <!-- DOI (hard-coded & always visible) -->
+              <p class="refs meta">
+                <strong>DOI:</strong>
+                <a class="doi-link" href="https://doi.org/10.1109/ICCCNT61001.2024.10724276" target="_blank"
+                  rel="noopener noreferrer" aria-label="Open DOI 10.1109/ICCCNT61001.2024.10724276">
+                  10.1109/ICCCNT61001.2024.10724276
+                </a>
+              </p>
+
+              <p>2D try-on stack (segmentation + pose + warping) with texture realism ablations.</p>
+              <div class="row">
+                <span class="pill">Computer Vision</span>
+                <span class="pill">Segmentation</span>
+                <span class="pill">Pose</span>
+              </div>
+              <div class="cta-row">
+                <a class="btn link-btn doi" data-doi="10.1109/ICCCNT61001.2024.10724276"
+                  href="https://ieeexplore.ieee.org/document/10724276" target="_blank" rel="noopener noreferrer">IEEE
+                  Xplore →</a>
+                <a class="btn ghost backup"
+                  href="https://drive.google.com/file/d/1otgsUfyvUCnLaW6yQAyRShDIu6QHolgv/view?usp=sharing"
+                  target="_blank" rel="noopener noreferrer">Backup (Drive) →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Publication 2 -->
+          <article class="card entry-card">
+            <img class="entry-thumb" src="assets/Publications/xgboost-ids.jpg" alt="XGBoost IDS paper thumbnail"
+              width="960" height="540" loading="lazy" decoding="async" />
+            <div class="entry-body">
+              <h3>Optimizing XGBoost Hyperparameters for Network Intrusion Detection</h3>
+              <p class="meta">ICCCSMD-2024, Dec 2024 · IEEE</p>
+              <!-- DOI (hard-coded & always visible) -->
+              <p class="refs meta">
+                <strong>DOI:</strong>
+                <a class="doi-link" href="https://doi.org/10.1109/ICCCSMD63546.2024.11015173" target="_blank"
+                  rel="noopener noreferrer" aria-label="Open DOI 10.1109/ICCCSMD63546.2024.11015173">
+                  10.1109/ICCCSMD63546.2024.11015173
+                </a>
+              </p>
+
+              <p>Precision-oriented IDS with threshold calibration to cut false positives.</p>
+              <div class="row">
+                <span class="pill">XGBoost</span>
+                <span class="pill">UNSW-NB15</span>
+                <span class="pill">AUC-PR</span>
+              </div>
+              <div class="cta-row">
+                <a class="btn link-btn doi" data-doi="10.1109/ICCCSMD63546.2024.11015173"
+                  href="https://ieeexplore.ieee.org/document/11015173" target="_blank" rel="noopener noreferrer">IEEE
+                  Xplore →</a>
+                <a class="btn ghost backup"
+                  href="https://drive.google.com/file/d/1A11L8CxVeWU3eiuIWvLIyVh_bH5oRA2c/view?usp=sharing"
+                  target="_blank" rel="noopener noreferrer">Backup (Drive) →</a>
+              </div>
+            </div>
+          </article>
+
         </div>
-      </article>
+      </div>
+    </section>
 
-      <!-- Publication 2 -->
-      <article class="card entry-card">
-        <img class="entry-thumb"
-             src="assets/Publications/xgboost-ids.jpg"
-             alt="XGBoost IDS paper thumbnail"
-             width="960" height="540" loading="lazy" decoding="async" />
-        <div class="entry-body">
-          <h3>Optimizing XGBoost Hyperparameters for Network Intrusion Detection</h3>
-          <p class="meta">ICCCSMD-2024, Dec 2024 · IEEE</p>
-          <!-- DOI (hard-coded & always visible) -->
-          <p class="refs meta">
-            <strong>DOI:</strong>
-            <a class="doi-link"
-               href="https://doi.org/10.1109/ICCCSMD63546.2024.11015173"
-               target="_blank" rel="noopener noreferrer"
-               aria-label="Open DOI 10.1109/ICCCSMD63546.2024.11015173">
-              10.1109/ICCCSMD63546.2024.11015173
-            </a>
-          </p>
+    <!-- CERTS & BADGES -->
+    <section id="certs" class="section hover-scope">
+      <div class="container">
+        <h2>Certs & Badges</h2>
+        <p class="lead">Hands-on cybersecurity skills developed through practical labs and challenges.</p>
 
-          <p>Precision-oriented IDS with threshold calibration to cut false positives.</p>
-          <div class="row">
-            <span class="pill">XGBoost</span>
-            <span class="pill">UNSW-NB15</span>
-            <span class="pill">AUC-PR</span>
-          </div>
-          <div class="cta-row">
-            <a class="btn link-btn doi"
-               data-doi="10.1109/ICCCSMD63546.2024.11015173"
-               href="https://ieeexplore.ieee.org/document/11015173"
-               target="_blank" rel="noopener noreferrer">IEEE Xplore →</a>
-            <a class="btn ghost backup"
-               href="https://drive.google.com/file/d/1A11L8CxVeWU3eiuIWvLIyVh_bH5oRA2c/view?usp=sharing"
-               target="_blank" rel="noopener noreferrer">Backup (Drive) →</a>
-          </div>
+        <div class="grid">
+          <!-- TryHackMe Path 1 -->
+          <article class="card entry-card">
+            <img class="entry-thumb" src="assets/Certs/Cyber-101.png" alt="Cyber Security 101 Completion" width="960"
+              height="540" loading="lazy" decoding="async" />
+            <div class="entry-body">
+              <h3>TryHackMe | Cyber Security 101</h3>
+              <p class="meta"><strong>Completed: Oct 2024</strong></p>
+              <p>Developed practical skills in network reconnaissance, web app penetration testing, and exploitation
+                methodologies using industry-standard tools.</p>
+              <div class="row">
+                <span class="pill">Network Security</span>
+                <span class="pill">Web App Testing</span>
+                <span class="pill">Exploitation</span>
+              </div>
+              <div class="cta-row">
+                <a class="btn link-btn" href="https://tryhackme.com/p/er.sumitsah" target="_blank"
+                  rel="noopener noreferrer">View Profile →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- TryHackMe Path 2 -->
+          <article class="card entry-card">
+            <img class="entry-thumb" src="assets/Certs/Pre-Security.jpg" alt="Pre Security Completion" width="960"
+              height="540" loading="lazy" decoding="async" />
+            <div class="entry-body">
+              <h3>TryHackMe | Pre Security</h3>
+              <p class="meta"><strong>Completed: Sept 2025</strong></p>
+              <p>Mastered cybersecurity fundamentals and basic attack methodologies through hands-on labs covering
+                networking, web basics, and Linux fundamentals.</p>
+              <div class="row">
+                <span class="pill">Fundamentals</span>
+                <span class="pill">Networking</span>
+                <span class="pill">Linux Basics</span>
+              </div>
+              <div class="cta-row">
+                <a class="btn link-btn" href="https://tryhackme.com/p/er.sumitsah" target="_blank"
+                  rel="noopener noreferrer">View Profile →</a>
+              </div>
+            </div>
+          </article>
         </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- CERTS & BADGES -->
-<section id="certs" class="section hover-scope">
-  <div class="container">
-    <h2>Certs & Badges</h2>
-    <p class="lead">Hands-on cybersecurity skills developed through practical labs and challenges.</p>
-    
-    <div class="grid">
-      <!-- TryHackMe Path 1 -->
-      <article class="card entry-card">
-        <img class="entry-thumb" src="assets/Certs/Cyber-101.png" alt="Cyber Security 101 Completion" width="960" height="540" loading="lazy" decoding="async" />
-        <div class="entry-body">
-          <h3>TryHackMe | Cyber Security 101</h3>
-          <p class="meta"><strong>Completed: Oct 2024</strong></p>
-          <p>Developed practical skills in network reconnaissance, web app penetration testing, and exploitation methodologies using industry-standard tools.</p>
-          <div class="row">
-            <span class="pill">Network Security</span>
-            <span class="pill">Web App Testing</span>
-            <span class="pill">Exploitation</span>
-          </div>
-          <div class="cta-row">
-            <a class="btn link-btn" href="https://tryhackme.com/p/er.sumitsah" target="_blank" rel="noopener noreferrer">View Profile →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- TryHackMe Path 2 -->
-      <article class="card entry-card">
-        <img class="entry-thumb" src="assets/Certs/Pre-Security.jpg" alt="Pre Security Completion" width="960" height="540" loading="lazy" decoding="async" />
-        <div class="entry-body">
-          <h3>TryHackMe | Pre Security</h3>
-          <p class="meta"><strong>Completed: Sept 2025</strong></p>
-          <p>Mastered cybersecurity fundamentals and basic attack methodologies through hands-on labs covering networking, web basics, and Linux fundamentals.</p>
-          <div class="row">
-            <span class="pill">Fundamentals</span>
-            <span class="pill">Networking</span>
-            <span class="pill">Linux Basics</span>
-          </div>
-          <div class="cta-row">
-            <a class="btn link-btn" href="https://tryhackme.com/p/er.sumitsah" target="_blank" rel="noopener noreferrer">View Profile →</a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
 
     <!-- BLOG CARDS -->
-<section id="blog" class="section hover-scope">
-  <div class="container">
-    <h2>Blog</h2>
-    <p class="lead">From ML research to security practice — notes on systems and engineering.</p>
+    <section id="blog" class="section hover-scope">
+      <div class="container">
+        <h2>Blog</h2>
+        <p class="lead">From ML research to security practice — notes on systems and engineering.</p>
 
-    <div class="grid">
-      <!-- 1 -->
-      <article class="card post-card">
-        <div class="post-body">
-          <h3 class="post-title">
-            <a href="https://medium.com/@er.sumitsah/demystifying-diffie-hellman-the-mathematical-foundations-of-secure-key-exchange-29b531c9b805" target="_blank" rel="noopener noreferrer">
-              Demystifying Diffie-Hellman: The Mathematical Foundations of Secure Key Exchange
-            </a>
-          </h3>
-          <div class="post-meta"><span>11 Oct</span><span class="dot"></span><span>Medium</span></div>
-          <p class="post-excerpt">A deep dive into Diffie-Hellman key exchange: the math behind secure symmetric key sharing and its role in modern cryptography.</p>
-          <div class="post-tags">
-            <span class="pill">Cryptography</span><span class="pill">Cybersecurity</span>
-          </div>
-          <div class="post-cta">
-            <a class="btn link-btn" href="https://medium.com/@er.sumitsah/demystifying-diffie-hellman-the-mathematical-foundations-of-secure-key-exchange-29b531c9b805" target="_blank" rel="noopener noreferrer">Read →</a>
-          </div>
+        <div class="grid">
+          <!-- 1 -->
+          <article class="card post-card">
+            <div class="post-body">
+              <h3 class="post-title">
+                <a href="https://medium.com/@er.sumitsah/demystifying-diffie-hellman-the-mathematical-foundations-of-secure-key-exchange-29b531c9b805"
+                  target="_blank" rel="noopener noreferrer">
+                  Demystifying Diffie-Hellman: The Mathematical Foundations of Secure Key Exchange
+                </a>
+              </h3>
+              <div class="post-meta"><span>11 Oct</span><span class="dot"></span><span>Medium</span></div>
+              <p class="post-excerpt">A deep dive into Diffie-Hellman key exchange: the math behind secure symmetric key
+                sharing and its role in modern cryptography.</p>
+              <div class="post-tags">
+                <span class="pill">Cryptography</span><span class="pill">Cybersecurity</span>
+              </div>
+              <div class="post-cta">
+                <a class="btn link-btn"
+                  href="https://medium.com/@er.sumitsah/demystifying-diffie-hellman-the-mathematical-foundations-of-secure-key-exchange-29b531c9b805"
+                  target="_blank" rel="noopener noreferrer">Read →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="card post-card">
+            <div class="post-body">
+              <h3 class="post-title">
+                <a href="https://medium.com/@er.sumitsah/the-complete-guide-to-rsa-encryption-from-mathematical-foundations-to-ctf-breakthroughs-f65b0a6fc883"
+                  target="_blank" rel="noopener noreferrer">
+                  The Complete Guide to RSA Encryption: From Mathematical Foundations to CTF Breakthroughs
+                </a>
+              </h3>
+              <div class="post-meta"><span>08 Oct</span><span class="dot"></span><span>Medium</span></div>
+              <p class="post-excerpt">Step-by-step guide to RSA: math foundations, key generation,
+                encryption/decryption, and CTF applications.</p>
+              <div class="post-tags">
+                <span class="pill">Cryptography</span><span class="pill">Cybersecurity</span>
+              </div>
+              <div class="post-cta">
+                <a class="btn link-btn"
+                  href="https://medium.com/@er.sumitsah/the-complete-guide-to-rsa-encryption-from-mathematical-foundations-to-ctf-breakthroughs-f65b0a6fc883"
+                  target="_blank" rel="noopener noreferrer">Read →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="card post-card">
+            <div class="post-body">
+              <h3 class="post-title">
+                <a href="https://medium.com/@er.sumitsah/scaling-your-identity-infrastructure-from-single-domain-to-forests-in-active-directory-8146b9bee3f8"
+                  target="_blank" rel="noopener noreferrer">
+                  A Comprehensive Guide to Graphs in Machine Learning
+                </a>
+              </h3>
+              <div class="post-meta"><span>29 Sept</span><span class="dot"></span><span>Medium</span></div>Master
+              domains, trees, forests, and trust relationships for enterprise Active Directory growth and management.
+              </p>
+              <div class="post-tags">
+                <span class="pill">Active Directory</span><span class="pill">Cybersecurity</span>
+              </div>
+              <div class="post-cta">
+                <a class="btn link-btn"
+                  href="https://medium.com/@er.sumitsah/scaling-your-identity-infrastructure-from-single-domain-to-forests-in-active-directory-8146b9bee3f8"
+                  target="_blank" rel="noopener noreferrer">Read →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="card post-card">
+            <div class="post-body">
+              <h3 class="post-title">
+                <a href="https://medium.com/@er.sumitsah/demystifying-windows-domain-authentication-a-journey-through-kerberos-and-netntlm-8e6b034abb7b"
+                  target="_blank" rel="noopener noreferrer">
+                  Demystifying Windows Domain Authentication: A Journey Through Kerberos and NetNTLM
+                </a>
+              </h3>
+              <div class="post-meta"><span>27 Feb</span><span class="dot"></span><span>Medium</span></div>
+              <p class="post-excerpt">Explore how Windows domain authentication works, from legacy NetNTLM handshakes to
+                modern Kerberos tickets.</p>
+              <div class="post-tags">
+                <span class="pill">Active Directory</span><span class="pill">Authentication</span>
+              </div>
+              <div class="post-cta">
+                <a class="btn link-btn"
+                  href="https://medium.com/@er.sumitsah/demystifying-windows-domain-authentication-a-journey-through-kerberos-and-netntlm-8e6b034abb7b"
+                  target="_blank" rel="noopener noreferrer">Read →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5 -->
+          <article class="card post-card">
+            <div class="post-body">
+              <h3 class="post-title">
+                <a href="https://medium.com/@er.sumitsah/mastering-probability-distributions-for-ml-from-pdf-to-cdf-a3c2c0163554"
+                  target="_blank" rel="noopener noreferrer">
+                  Mastering Probability Distributions for ML: From PDF to CDF
+                </a>
+              </h3>
+              <div class="post-meta"><span>24 Jun</span><span class="dot"></span><span>Medium</span></div>
+              <p class="post-excerpt">Intuition + formulas for PDFs, CDFs, and where they show up in ML workflows.</p>
+              <div class="post-tags">
+                <span class="pill">Statistics</span><span class="pill">ML</span>
+              </div>
+              <div class="post-cta">
+                <a class="btn link-btn"
+                  href="https://medium.com/@er.sumitsah/mastering-probability-distributions-for-ml-from-pdf-to-cdf-a3c2c0163554"
+                  target="_blank" rel="noopener noreferrer">Read →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6 -->
+          <article class="card post-card">
+            <div class="post-body">
+              <h3 class="post-title">
+                <a href="https://medium.com/@er.sumitsah/a-comprehensive-guide-to-graphs-in-machine-learning-ce214d72daca"
+                  target="_blank" rel="noopener noreferrer">
+                  A Comprehensive Guide to Graphs in Machine Learning
+                </a>
+              </h3>
+              <div class="post-meta"><span>05 Mar</span><span class="dot"></span><span>Medium</span></div>
+              <p class="post-excerpt">Learn how graphs and networks can model relationships in data and their
+                applications in ML workflows.</p>
+              <div class="post-tags">
+                <span class="pill">Graph</span><span class="pill">ML</span>
+              </div>
+              <div class="post-cta">
+                <a class="btn link-btn"
+                  href="https://medium.com/@er.sumitsah/a-comprehensive-guide-to-graphs-in-machine-learning-ce214d72daca"
+                  target="_blank" rel="noopener noreferrer">Read →</a>
+              </div>
+            </div>
+          </article>
+
         </div>
-      </article>
 
-      <!-- 2 -->
-      <article class="card post-card">
-        <div class="post-body">
-          <h3 class="post-title">
-            <a href="https://medium.com/@er.sumitsah/the-complete-guide-to-rsa-encryption-from-mathematical-foundations-to-ctf-breakthroughs-f65b0a6fc883" target="_blank" rel="noopener noreferrer">
-              The Complete Guide to RSA Encryption: From Mathematical Foundations to CTF Breakthroughs
-            </a>
-          </h3>
-          <div class="post-meta"><span>08 Oct</span><span class="dot"></span><span>Medium</span></div>
-          <p class="post-excerpt">Step-by-step guide to RSA: math foundations, key generation, encryption/decryption, and CTF applications.</p>
-          <div class="post-tags">
-            <span class="pill">Cryptography</span><span class="pill">Cybersecurity</span>
-          </div>
-          <div class="post-cta">
-            <a class="btn link-btn" href="https://medium.com/@er.sumitsah/the-complete-guide-to-rsa-encryption-from-mathematical-foundations-to-ctf-breakthroughs-f65b0a6fc883" target="_blank" rel="noopener noreferrer">Read →</a>
-          </div>
+        <div class="blog-more">
+          <a class="btn link-btn" href="https://medium.com/@er.sumitsah" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-medium" style="color:#000;"></i> See More on Medium →
+          </a>
         </div>
-      </article>
 
-      <!-- 3 -->
-      <article class="card post-card">
-        <div class="post-body">
-          <h3 class="post-title">
-            <a href="https://medium.com/@er.sumitsah/scaling-your-identity-infrastructure-from-single-domain-to-forests-in-active-directory-8146b9bee3f8" target="_blank" rel="noopener noreferrer">
-              A Comprehensive Guide to Graphs in Machine Learning
-            </a>
-          </h3>
-          <div class="post-meta"><span>29 Sept</span><span class="dot"></span><span>Medium</span></div>Master domains, trees, forests, and trust relationships for enterprise Active Directory growth and management.</p>
-          <div class="post-tags">
-            <span class="pill">Active Directory</span><span class="pill">Cybersecurity</span>
-          </div>
-          <div class="post-cta">
-            <a class="btn link-btn" href="https://medium.com/@er.sumitsah/scaling-your-identity-infrastructure-from-single-domain-to-forests-in-active-directory-8146b9bee3f8" target="_blank" rel="noopener noreferrer">Read →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- 4 -->
-      <article class="card post-card">
-        <div class="post-body">
-          <h3 class="post-title">
-            <a href="https://medium.com/@er.sumitsah/demystifying-windows-domain-authentication-a-journey-through-kerberos-and-netntlm-8e6b034abb7b" target="_blank" rel="noopener noreferrer">
-              Demystifying Windows Domain Authentication: A Journey Through Kerberos and NetNTLM
-            </a>
-          </h3>
-          <div class="post-meta"><span>27 Feb</span><span class="dot"></span><span>Medium</span></div>
-          <p class="post-excerpt">Explore how Windows domain authentication works, from legacy NetNTLM handshakes to modern Kerberos tickets.</p>
-          <div class="post-tags">
-            <span class="pill">Active Directory</span><span class="pill">Authentication</span>
-          </div>
-          <div class="post-cta">
-            <a class="btn link-btn" href="https://medium.com/@er.sumitsah/demystifying-windows-domain-authentication-a-journey-through-kerberos-and-netntlm-8e6b034abb7b" target="_blank" rel="noopener noreferrer">Read →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- 5 -->
-      <article class="card post-card">
-        <div class="post-body">
-          <h3 class="post-title">
-            <a href="https://medium.com/@er.sumitsah/mastering-probability-distributions-for-ml-from-pdf-to-cdf-a3c2c0163554" target="_blank" rel="noopener noreferrer">
-              Mastering Probability Distributions for ML: From PDF to CDF
-            </a>
-          </h3>
-          <div class="post-meta"><span>24 Jun</span><span class="dot"></span><span>Medium</span></div>
-          <p class="post-excerpt">Intuition + formulas for PDFs, CDFs, and where they show up in ML workflows.</p>
-          <div class="post-tags">
-            <span class="pill">Statistics</span><span class="pill">ML</span>
-          </div>
-          <div class="post-cta">
-            <a class="btn link-btn" href="https://medium.com/@er.sumitsah/mastering-probability-distributions-for-ml-from-pdf-to-cdf-a3c2c0163554" target="_blank" rel="noopener noreferrer">Read →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- 6 -->
-      <article class="card post-card">
-        <div class="post-body">
-          <h3 class="post-title">
-            <a href="https://medium.com/@er.sumitsah/a-comprehensive-guide-to-graphs-in-machine-learning-ce214d72daca" target="_blank" rel="noopener noreferrer">
-              A Comprehensive Guide to Graphs in Machine Learning
-            </a>
-          </h3>
-          <div class="post-meta"><span>05 Mar</span><span class="dot"></span><span>Medium</span></div>
-          <p class="post-excerpt">Learn how graphs and networks can model relationships in data and their applications in ML workflows.</p>
-          <div class="post-tags">
-            <span class="pill">Graph</span><span class="pill">ML</span>
-          </div>
-          <div class="post-cta">
-            <a class="btn link-btn" href="https://medium.com/@er.sumitsah/a-comprehensive-guide-to-graphs-in-machine-learning-ce214d72daca" target="_blank" rel="noopener noreferrer">Read →</a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
-    <div class="blog-more">
-  <a class="btn link-btn" href="https://medium.com/@er.sumitsah" target="_blank" rel="noopener noreferrer">
-    <i class="fa-brands fa-medium" style="color:#000;"></i> See More on Medium →
-  </a>
-</div>
-
-  </div>
-</section>
+      </div>
+    </section>
 
     <!-- CONTACT -->
-<section id="contact" class="section">
-  <div class="container">
-    <h2>Contact</h2>
-    <p class="lead">Want to collaborate or chat about research/engineering? I read every message.</p>
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="lead">Want to collaborate or chat about research/engineering? I read every message.</p>
 
-    <form action="https://formsubmit.co/er.sumitsah@gmail.com" method="POST">
-      <!-- Redirect to thank-you page after submit -->
-      <input type="hidden" name="_next" value="https://sumit-jr.github.io/Portfolio/thankyou.html">
-      <!-- Optional settings -->
-      <input type="hidden" name="_subject" value="Portfolio Contact">
-      <!-- (Removed captcha as requested) -->
-      <input type="text" name="_honey" style="display:none">
+        <form action="https://formsubmit.co/er.sumitsah@gmail.com" method="POST">
+          <!-- Redirect to thank-you page after submit -->
+          <input type="hidden" name="_next" value="https://sumit-jr.github.io/Portfolio/thankyou.html">
+          <!-- Optional settings -->
+          <input type="hidden" name="_subject" value="Portfolio Contact">
+          <!-- (Removed captcha as requested) -->
+          <input type="text" name="_honey" style="display:none">
 
-      <!-- Visible fields -->
-      <label class="sr-only" for="name">Name</label>
-      <input id="name" name="name" placeholder="Your name" required autocomplete="name">
+          <!-- Visible fields -->
+          <label class="sr-only" for="name">Name</label>
+          <input id="name" name="name" placeholder="Your name" required autocomplete="name">
 
-      <label class="sr-only" for="email">Email</label>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        placeholder="you@example.com"
-        required
-        autocomplete="email"
-        inputmode="email"
-        pattern="^[A-Za-z0-9][A-Za-z0-9._%+-]*@[A-Za-z0-9.-]+\.[A-Za-z]{2,24}$"
-        title="Use a valid email like name@example.com"
-      >
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required autocomplete="email"
+            inputmode="email" pattern="^[A-Za-z0-9][A-Za-z0-9._%+-]*@[A-Za-z0-9.-]+\.[A-Za-z]{2,24}$"
+            title="Use a valid email like name@example.com">
 
-      <label class="sr-only" for="msg">Message</label>
-      <textarea id="msg" name="message" placeholder="How can I help?" required minlength="5"></textarea>
+          <label class="sr-only" for="msg">Message</label>
+          <textarea id="msg" name="message" placeholder="How can I help?" required minlength="5"></textarea>
 
-      <button class="btn" type="submit">Send Message</button>
-    </form>
+          <button class="btn" type="submit">Send Message</button>
+        </form>
 
-    <p class="meta" style="margin-top:10px;">
-      Or email me directly: <a class="link" href="mailto:er.sumitsah@gmail.com">er.sumitsah@gmail.com</a>
-    </p>
-  </div>
-</section>
+        <p class="meta" style="margin-top:10px;">
+          Or email me directly: <a class="link" href="mailto:er.sumitsah@gmail.com">er.sumitsah@gmail.com</a>
+        </p>
+      </div>
+    </section>
 
-<!-- FOOTER -->
-  <footer class="site-footer">
-  <div class="container foot-flex">
-    
-    <!-- Socials Left -->
-    <div class="foot-socials">
-      <a href="https://www.linkedin.com/in/sumit-prasad-sah/" target="_blank" rel="noopener" data-brand="linkedin">
-        <i class="fa-brands fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/Sumit-jr" target="_blank" rel="noopener" data-brand="github">
-        <i class="fa-brands fa-github"></i>
-      </a>
-      <a href="https://medium.com/@er.sumitsah" target="_blank" rel="noopener" data-brand="medium">
-        <i class="fa-brands fa-medium"></i>
-      </a>
-      <a href="https://tryhackme.com/p/er.sumitsah" target="_blank" rel="noopener" data-brand="tryhackme">
-    <i class="fa-solid fa-shield-halved"></i>
-  </a>
-      <a href="https://twitter.com/sumitsah_jr" target="_blank" rel="noopener" data-brand="twitter">
-        <i class="fa-brands fa-x-twitter"></i>
-      </a>
-      <a href="https://orcid.org/0009-0001-8084-7935" target="_blank" rel="noopener" data-brand="orcid">
-        <i class="fa-brands fa-orcid"></i>
-      </a>
-    </div>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container foot-flex">
 
-    <!-- Center Branding -->
-    <div class="foot-name">
-      © <span id="year"></span> <strong>Sumit Sah</strong>
-    </div>
+        <!-- Socials Left -->
+        <div class="foot-socials">
+          <a href="https://www.linkedin.com/in/sumit-prasad-sah/" target="_blank" rel="noopener" data-brand="linkedin">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/Sumit-jr" target="_blank" rel="noopener" data-brand="github">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://medium.com/@er.sumitsah" target="_blank" rel="noopener" data-brand="medium">
+            <i class="fa-brands fa-medium"></i>
+          </a>
+          <a href="https://tryhackme.com/p/er.sumitsah" target="_blank" rel="noopener" data-brand="tryhackme">
+            <i class="fa-solid fa-shield-halved"></i>
+          </a>
+          <a href="https://twitter.com/sumitsah_jr" target="_blank" rel="noopener" data-brand="twitter">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="https://orcid.org/0009-0001-8084-7935" target="_blank" rel="noopener" data-brand="orcid">
+            <i class="fa-brands fa-orcid"></i>
+          </a>
+        </div>
 
-    <!-- Resume Right -->
-    <div class="foot-cta">
-      <a class="resume-btn" href="assets/Sumit_Sah_Resume.pdf" target="_blank" rel="noopener noreferrer">
-        Download Resume
-      </a>
-    </div>
-  </div>
-</footer>
-  <script src="js/app.js" defer></script>
+        <!-- Center Branding -->
+        <div class="foot-name">
+          © <span id="year"></span> <strong>Sumit Sah</strong>
+        </div>
+
+        <!-- Resume Right -->
+        <div class="foot-cta">
+          <a class="resume-btn" href="assets/Sumit_Sah_Resume.pdf" target="_blank" rel="noopener noreferrer">
+            Download Resume
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script src="js/app.js" defer></script>
 </body>
+
 </html>
